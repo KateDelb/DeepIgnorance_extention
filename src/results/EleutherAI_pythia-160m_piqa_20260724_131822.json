@@ -1,0 +1,5525 @@
+{
+  "results": {
+    "piqa": {
+      "name": "piqa",
+      "alias": "piqa",
+      "sample_len": 100,
+      "acc,none": 0.67,
+      "acc_stderr,none": 0.04725815626252609,
+      "acc_norm,none": 0.64,
+      "acc_norm_stderr,none": 0.048241815132442176
+    }
+  },
+  "group_subtasks": {},
+  "configs": {
+    "piqa": {
+      "task": "piqa",
+      "dataset_path": "baber/piqa",
+      "training_split": "train",
+      "validation_split": "validation",
+      "doc_to_text": "Question: {{goal}}\nAnswer:",
+      "doc_to_target": "label",
+      "unsafe_code": false,
+      "doc_to_choice": "{{[sol1, sol2]}}",
+      "description": "",
+      "target_delimiter": " ",
+      "fewshot_delimiter": "\n\n",
+      "fewshot_config": {
+        "sampler": "default",
+        "split": null,
+        "process_docs": null,
+        "fewshot_indices": null,
+        "samples": null,
+        "doc_to_text": "Question: {{goal}}\nAnswer:",
+        "doc_to_choice": "{{[sol1, sol2]}}",
+        "doc_to_target": "label",
+        "gen_prefix": null,
+        "fewshot_delimiter": "\n\n",
+        "target_delimiter": " "
+      },
+      "num_fewshot": 0,
+      "metric_list": [
+        {
+          "metric": "acc",
+          "aggregation": "mean",
+          "higher_is_better": true
+        },
+        {
+          "metric": "acc_norm",
+          "aggregation": "mean",
+          "higher_is_better": true
+        }
+      ],
+      "output_type": "multiple_choice",
+      "repeats": 1,
+      "should_decontaminate": true,
+      "doc_to_decontamination_query": "goal",
+      "metadata": {
+        "version": 1.0,
+        "pretrained": "gpt2",
+        "config_source": "/home/kate/Documents/code/AISafety_projects/DeepIgnorance/deep-ignorance-extension/.venv/lib/python3.14/site-packages/lm_eval/tasks/piqa/piqa.yaml"
+      }
+    }
+  },
+  "versions": {
+    "piqa": 1.0
+  },
+  "n-shot": {
+    "piqa": 0
+  },
+  "higher_is_better": {
+    "piqa": {
+      "acc": true,
+      "acc_norm": true
+    }
+  },
+  "n-samples": {
+    "piqa": {
+      "original": 1838,
+      "effective": 100
+    }
+  },
+  "samples": {
+    "piqa": [
+      {
+        "doc_id": 0,
+        "doc": {
+          "goal": "How do I ready a guinea pig cage for it's new occupants?",
+          "sol1": "Provide the guinea pig with a cage full of a few inches of bedding made of ripped paper strips, you will also need to supply it with a water bottle and a food dish.",
+          "sol2": "Provide the guinea pig with a cage full of a few inches of bedding made of ripped jeans material, you will also need to supply it with a water bottle and a food dish.",
+          "label": 0
+        },
+        "target": 0,
+        "arguments": [
+          [
+            "Question: How do I ready a guinea pig cage for it's new occupants?\nAnswer:",
+            " Provide the guinea pig with a cage full of a few inches of bedding made of ripped paper strips, you will also need to supply it with a water bottle and a food dish."
+          ],
+          [
+            "Question: How do I ready a guinea pig cage for it's new occupants?\nAnswer:",
+            " Provide the guinea pig with a cage full of a few inches of bedding made of ripped jeans material, you will also need to supply it with a water bottle and a food dish."
+          ]
+        ],
+        "resps": [
+          [
+            [
+              -118.10785675048828,
+              false
+            ]
+          ],
+          [
+            [
+              -125.93498229980469,
+              false
+            ]
+          ]
+        ],
+        "filtered_resps": [
+          [
+            -118.10785675048828,
+            false
+          ],
+          [
+            -125.93498229980469,
+            false
+          ]
+        ],
+        "filter": "none",
+        "metrics": [
+          "acc",
+          "acc_norm"
+        ],
+        "doc_hash": "ab177c9b9ad0fd48149e873e3d4804752991338a90c2072f52b975f86a7ca78e",
+        "prompt_hash": "14e2e90bdc64add59c76a88c2efb217a132b459947f9f2e3bbe8580b71beb533",
+        "target_hash": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+        "acc": 1.0,
+        "acc_norm": 1.0
+      },
+      {
+        "doc_id": 1,
+        "doc": {
+          "goal": "dresser",
+          "sol1": "replace drawer with bobby pin ",
+          "sol2": "finish, woodgrain with  bobby pin ",
+          "label": 1
+        },
+        "target": 1,
+        "arguments": [
+          [
+            "Question: dresser\nAnswer:",
+            " replace drawer with bobby pin "
+          ],
+          [
+            "Question: dresser\nAnswer:",
+            " finish, woodgrain with  bobby pin "
+          ]
+        ],
+        "resps": [
+          [
+            [
+              -42.22745895385742,
+              false
+            ]
+          ],
+          [
+            [
+              -65.77001190185547,
+              false
+            ]
+          ]
+        ],
+        "filtered_resps": [
+          [
+            -42.22745895385742,
+            false
+          ],
+          [
+            -65.77001190185547,
+            false
+          ]
+        ],
+        "filter": "none",
+        "metrics": [
+          "acc",
+          "acc_norm"
+        ],
+        "doc_hash": "efca48ba31552995499f4b6dd5d2a0cf39296941ffad6e951b7840b6a3b01795",
+        "prompt_hash": "83ed1685df44e1de246dd58e93f1a55805949f19f2ad435bcaa59038262f877c",
+        "target_hash": "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b",
+        "acc": 0.0,
+        "acc_norm": 0.0
+      },
+      {
+        "doc_id": 2,
+        "doc": {
+          "goal": "To fight Ivan Drago in Rocky for sega master system.",
+          "sol1": "Drago isn't in this game because it was released before Rocky IV.",
+          "sol2": "You have to defeat Apollo Creed and Clubber Lang first.",
+          "label": 1
+        },
+        "target": 1,
+        "arguments": [
+          [
+            "Question: To fight Ivan Drago in Rocky for sega master system.\nAnswer:",
+            " Drago isn't in this game because it was released before Rocky IV."
+          ],
+          [
+            "Question: To fight Ivan Drago in Rocky for sega master system.\nAnswer:",
+            " You have to defeat Apollo Creed and Clubber Lang first."
+          ]
+        ],
+        "resps": [
+          [
+            [
+              -47.206966400146484,
+              false
+            ]
+          ],
+          [
+            [
+              -69.6268310546875,
+              false
+            ]
+          ]
+        ],
+        "filtered_resps": [
+          [
+            -47.206966400146484,
+            false
+          ],
+          [
+            -69.6268310546875,
+            false
+          ]
+        ],
+        "filter": "none",
+        "metrics": [
+          "acc",
+          "acc_norm"
+        ],
+        "doc_hash": "4abd7fecc2810cf1a912698be93697ef8d0930074475a6f07cf541e934cda3aa",
+        "prompt_hash": "31c59e4fa20c69ae99d6dd53675910c792b3486675e5a5ffac293569819fa6ca",
+        "target_hash": "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b",
+        "acc": 0.0,
+        "acc_norm": 0.0
+      },
+      {
+        "doc_id": 3,
+        "doc": {
+          "goal": "Make outdoor pillow.",
+          "sol1": "Blow into tin can and tie with rubber band.",
+          "sol2": "Blow into trash bag and tie with rubber band.",
+          "label": 1
+        },
+        "target": 1,
+        "arguments": [
+          [
+            "Question: Make outdoor pillow.\nAnswer:",
+            " Blow into tin can and tie with rubber band."
+          ],
+          [
+            "Question: Make outdoor pillow.\nAnswer:",
+            " Blow into trash bag and tie with rubber band."
+          ]
+        ],
+        "resps": [
+          [
+            [
+              -46.57282638549805,
+              false
+            ]
+          ],
+          [
+            [
+              -45.689796447753906,
+              false
+            ]
+          ]
+        ],
+        "filtered_resps": [
+          [
+            -46.57282638549805,
+            false
+          ],
+          [
+            -45.689796447753906,
+            false
+          ]
+        ],
+        "filter": "none",
+        "metrics": [
+          "acc",
+          "acc_norm"
+        ],
+        "doc_hash": "96feb64b66ada8ee9b5e62a227494c70d7b18a5f1298cff287aad79a0fffbc91",
+        "prompt_hash": "479df7fd3298379c1801efc235650d355dc67e78a8d94485d432ba9d56b8dc97",
+        "target_hash": "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b",
+        "acc": 1.0,
+        "acc_norm": 1.0
+      },
+      {
+        "doc_id": 4,
+        "doc": {
+          "goal": "ice box",
+          "sol1": "will turn into a cooler if you add water to it",
+          "sol2": "will turn into a cooler if you add soda to it",
+          "label": 0
+        },
+        "target": 0,
+        "arguments": [
+          [
+            "Question: ice box\nAnswer:",
+            " will turn into a cooler if you add water to it"
+          ],
+          [
+            "Question: ice box\nAnswer:",
+            " will turn into a cooler if you add soda to it"
+          ]
+        ],
+        "resps": [
+          [
+            [
+              -42.105018615722656,
+              false
+            ]
+          ],
+          [
+            [
+              -47.69556427001953,
+              false
+            ]
+          ]
+        ],
+        "filtered_resps": [
+          [
+            -42.105018615722656,
+            false
+          ],
+          [
+            -47.69556427001953,
+            false
+          ]
+        ],
+        "filter": "none",
+        "metrics": [
+          "acc",
+          "acc_norm"
+        ],
+        "doc_hash": "8a5898846c3d77b7f1ef86092792adf8f142407667766e215cd9d318a494638b",
+        "prompt_hash": "31b0de661145252c0dfc6bcec8a9e315e763b787a17f1c44665ae6bea0317a8a",
+        "target_hash": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+        "acc": 1.0,
+        "acc_norm": 1.0
+      },
+      {
+        "doc_id": 5,
+        "doc": {
+          "goal": "Remove soap scum from shower door.",
+          "sol1": "Rub hard with bed sheets, then rinse.",
+          "sol2": "Rub hard with dryer sheets, then rinse.",
+          "label": 1
+        },
+        "target": 1,
+        "arguments": [
+          [
+            "Question: Remove soap scum from shower door.\nAnswer:",
+            " Rub hard with bed sheets, then rinse."
+          ],
+          [
+            "Question: Remove soap scum from shower door.\nAnswer:",
+            " Rub hard with dryer sheets, then rinse."
+          ]
+        ],
+        "resps": [
+          [
+            [
+              -48.014434814453125,
+              false
+            ]
+          ],
+          [
+            [
+              -49.461692810058594,
+              false
+            ]
+          ]
+        ],
+        "filtered_resps": [
+          [
+            -48.014434814453125,
+            false
+          ],
+          [
+            -49.461692810058594,
+            false
+          ]
+        ],
+        "filter": "none",
+        "metrics": [
+          "acc",
+          "acc_norm"
+        ],
+        "doc_hash": "4ce36c3721b0c07f932fa8a9b410e2bfec5eaf62fb6285638ea53f6808e20fe7",
+        "prompt_hash": "3ce2c9aeb4ab9be042309c72cb5c48e3bdd02373f0c19e397e9ba86256f232b9",
+        "target_hash": "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b",
+        "acc": 0.0,
+        "acc_norm": 1.0
+      },
+      {
+        "doc_id": 6,
+        "doc": {
+          "goal": "Recycle a spray bottle for a new cleaner.",
+          "sol1": "Open the top of the empty spray bottle and check for damage. Rinse the bottle then fill halfway with warm water. Replace the spray nozzle and pump a few times to clear the hose. Empty sparrow bottle and allow to dry before using with a new cleaner.",
+          "sol2": "Open the top of the empty spray bottle and check for damage. Rinse the bottle then fill halfway with warm water. Replace the spray nozzle and pump a few times to clear the hose. Empty spray bottle and allow to dry before using with a new cleaner.",
+          "label": 1
+        },
+        "target": 1,
+        "arguments": [
+          [
+            "Question: Recycle a spray bottle for a new cleaner.\nAnswer:",
+            " Open the top of the empty spray bottle and check for damage. Rinse the bottle then fill halfway with warm water. Replace the spray nozzle and pump a few times to clear the hose. Empty sparrow bottle and allow to dry before using with a new cleaner."
+          ],
+          [
+            "Question: Recycle a spray bottle for a new cleaner.\nAnswer:",
+            " Open the top of the empty spray bottle and check for damage. Rinse the bottle then fill halfway with warm water. Replace the spray nozzle and pump a few times to clear the hose. Empty spray bottle and allow to dry before using with a new cleaner."
+          ]
+        ],
+        "resps": [
+          [
+            [
+              -178.35763549804688,
+              false
+            ]
+          ],
+          [
+            [
+              -159.70274353027344,
+              false
+            ]
+          ]
+        ],
+        "filtered_resps": [
+          [
+            -178.35763549804688,
+            false
+          ],
+          [
+            -159.70274353027344,
+            false
+          ]
+        ],
+        "filter": "none",
+        "metrics": [
+          "acc",
+          "acc_norm"
+        ],
+        "doc_hash": "8b4a4f7dfb6035e649303df3237b70eee56386cb6a9a46fed3558bcd938aa1e6",
+        "prompt_hash": "36ff22ee2423015cf2aaa5e657a19b53563bf6dfc6fd284d548655c81539c312",
+        "target_hash": "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b",
+        "acc": 1.0,
+        "acc_norm": 1.0
+      },
+      {
+        "doc_id": 7,
+        "doc": {
+          "goal": "How do you attach toilet paper to a glass jar?",
+          "sol1": "Press a piece of double-sided tape to the glass jar and then press the toilet paper onto the tape.",
+          "sol2": "Spread mayonnaise all over the jar with your palms and then roll the jar in toilet paper.",
+          "label": 0
+        },
+        "target": 0,
+        "arguments": [
+          [
+            "Question: How do you attach toilet paper to a glass jar?\nAnswer:",
+            " Press a piece of double-sided tape to the glass jar and then press the toilet paper onto the tape."
+          ],
+          [
+            "Question: How do you attach toilet paper to a glass jar?\nAnswer:",
+            " Spread mayonnaise all over the jar with your palms and then roll the jar in toilet paper."
+          ]
+        ],
+        "resps": [
+          [
+            [
+              -54.443817138671875,
+              false
+            ]
+          ],
+          [
+            [
+              -67.97024536132812,
+              false
+            ]
+          ]
+        ],
+        "filtered_resps": [
+          [
+            -54.443817138671875,
+            false
+          ],
+          [
+            -67.97024536132812,
+            false
+          ]
+        ],
+        "filter": "none",
+        "metrics": [
+          "acc",
+          "acc_norm"
+        ],
+        "doc_hash": "90a1a24dcba318e7ae192de2710f4c245600425e7e4009ab5d192153667bc5e4",
+        "prompt_hash": "b8929987a61e8e5b607375fc7466bd37c1a5134bb7cf30fdd3cf9f6c3e5d6927",
+        "target_hash": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+        "acc": 1.0,
+        "acc_norm": 1.0
+      },
+      {
+        "doc_id": 8,
+        "doc": {
+          "goal": "How to make tissue paper window decorations?",
+          "sol1": "Find tissue paper and fold it in half. Take scissors and cut out pieces of the paper in the middle. When you are done tape it to your window.",
+          "sol2": "Find tissue paper and fold it in half. Take scissors and tear out pieces of the paper in the middle. When you are done tape it to your window.",
+          "label": 0
+        },
+        "target": 0,
+        "arguments": [
+          [
+            "Question: How to make tissue paper window decorations?\nAnswer:",
+            " Find tissue paper and fold it in half. Take scissors and cut out pieces of the paper in the middle. When you are done tape it to your window."
+          ],
+          [
+            "Question: How to make tissue paper window decorations?\nAnswer:",
+            " Find tissue paper and fold it in half. Take scissors and tear out pieces of the paper in the middle. When you are done tape it to your window."
+          ]
+        ],
+        "resps": [
+          [
+            [
+              -99.13030242919922,
+              false
+            ]
+          ],
+          [
+            [
+              -105.8868408203125,
+              false
+            ]
+          ]
+        ],
+        "filtered_resps": [
+          [
+            -99.13030242919922,
+            false
+          ],
+          [
+            -105.8868408203125,
+            false
+          ]
+        ],
+        "filter": "none",
+        "metrics": [
+          "acc",
+          "acc_norm"
+        ],
+        "doc_hash": "f3d2ad257b6663c4cd75fa70d41f8dc5a335ee1c9dfd8d2ca8d011f05c8bc3d5",
+        "prompt_hash": "30d9543ecd27ee1ee3e254e9a0b72e9bde0f15656fefea7e0d98bf9c75df21ad",
+        "target_hash": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+        "acc": 1.0,
+        "acc_norm": 1.0
+      },
+      {
+        "doc_id": 9,
+        "doc": {
+          "goal": "Neatly wrap up an extension cord.",
+          "sol1": "Wrap the cord around your hand and elbow.",
+          "sol2": "Wrap the cord around your hand and knee.",
+          "label": 0
+        },
+        "target": 0,
+        "arguments": [
+          [
+            "Question: Neatly wrap up an extension cord.\nAnswer:",
+            " Wrap the cord around your hand and elbow."
+          ],
+          [
+            "Question: Neatly wrap up an extension cord.\nAnswer:",
+            " Wrap the cord around your hand and knee."
+          ]
+        ],
+        "resps": [
+          [
+            [
+              -28.420251846313477,
+              false
+            ]
+          ],
+          [
+            [
+              -29.950716018676758,
+              false
+            ]
+          ]
+        ],
+        "filtered_resps": [
+          [
+            -28.420251846313477,
+            false
+          ],
+          [
+            -29.950716018676758,
+            false
+          ]
+        ],
+        "filter": "none",
+        "metrics": [
+          "acc",
+          "acc_norm"
+        ],
+        "doc_hash": "0c9eca023fb1e56eee4666f8d1f88b040a27fe1354c6a54fbcd1eab5769a3432",
+        "prompt_hash": "66965c79359ecf4bda282a567aa3e3c81b856dff695ffc4ba2a18d94ac7bc918",
+        "target_hash": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+        "acc": 1.0,
+        "acc_norm": 1.0
+      },
+      {
+        "doc_id": 10,
+        "doc": {
+          "goal": "Extend life of flowers in vase.",
+          "sol1": "Add small amount of coffee in vase.",
+          "sol2": "Add small amount of 7UP in vase.",
+          "label": 1
+        },
+        "target": 1,
+        "arguments": [
+          [
+            "Question: Extend life of flowers in vase.\nAnswer:",
+            " Add small amount of coffee in vase."
+          ],
+          [
+            "Question: Extend life of flowers in vase.\nAnswer:",
+            " Add small amount of 7UP in vase."
+          ]
+        ],
+        "resps": [
+          [
+            [
+              -33.043704986572266,
+              false
+            ]
+          ],
+          [
+            [
+              -46.55814743041992,
+              false
+            ]
+          ]
+        ],
+        "filtered_resps": [
+          [
+            -33.043704986572266,
+            false
+          ],
+          [
+            -46.55814743041992,
+            false
+          ]
+        ],
+        "filter": "none",
+        "metrics": [
+          "acc",
+          "acc_norm"
+        ],
+        "doc_hash": "c06efded47018519082e4d3554e9fb9f78a9f016971d64b62d7d4bc1d1fc4529",
+        "prompt_hash": "03d172f4ba2335b45837defb17f8e2a399fc8be5c2ba6fb7073909aa24799cf6",
+        "target_hash": "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b",
+        "acc": 0.0,
+        "acc_norm": 0.0
+      },
+      {
+        "doc_id": 11,
+        "doc": {
+          "goal": "how do you put eyelashes on?",
+          "sol1": "glue them on with mascara.",
+          "sol2": "put eyelash glue on the fake eyelashes and then let it get tacky. then, place it on top of your actual eyelashes and let it dry on.",
+          "label": 1
+        },
+        "target": 1,
+        "arguments": [
+          [
+            "Question: how do you put eyelashes on?\nAnswer:",
+            " glue them on with mascara."
+          ],
+          [
+            "Question: how do you put eyelashes on?\nAnswer:",
+            " put eyelash glue on the fake eyelashes and then let it get tacky. then, place it on top of your actual eyelashes and let it dry on."
+          ]
+        ],
+        "resps": [
+          [
+            [
+              -24.614660263061523,
+              false
+            ]
+          ],
+          [
+            [
+              -100.88823699951172,
+              false
+            ]
+          ]
+        ],
+        "filtered_resps": [
+          [
+            -24.614660263061523,
+            false
+          ],
+          [
+            -100.88823699951172,
+            false
+          ]
+        ],
+        "filter": "none",
+        "metrics": [
+          "acc",
+          "acc_norm"
+        ],
+        "doc_hash": "46fdb2eaea91dbf9626ba0771a221b0f8f46bac75055fc75b8e066b9b2bc87bc",
+        "prompt_hash": "c6cc3ead1c074c78e55d1233df501dc653c391c1dafd0e8cd445f51ab72094dd",
+        "target_hash": "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b",
+        "acc": 0.0,
+        "acc_norm": 1.0
+      },
+      {
+        "doc_id": 12,
+        "doc": {
+          "goal": "Find spices easily in the kitchen.",
+          "sol1": "Arrange spices from hot to mild in the kitchen in order to find them by taste.",
+          "sol2": "Arrange your spices alphabetically to make finding them easy.",
+          "label": 1
+        },
+        "target": 1,
+        "arguments": [
+          [
+            "Question: Find spices easily in the kitchen.\nAnswer:",
+            " Arrange spices from hot to mild in the kitchen in order to find them by taste."
+          ],
+          [
+            "Question: Find spices easily in the kitchen.\nAnswer:",
+            " Arrange your spices alphabetically to make finding them easy."
+          ]
+        ],
+        "resps": [
+          [
+            [
+              -62.93013381958008,
+              false
+            ]
+          ],
+          [
+            [
+              -44.82351303100586,
+              false
+            ]
+          ]
+        ],
+        "filtered_resps": [
+          [
+            -62.93013381958008,
+            false
+          ],
+          [
+            -44.82351303100586,
+            false
+          ]
+        ],
+        "filter": "none",
+        "metrics": [
+          "acc",
+          "acc_norm"
+        ],
+        "doc_hash": "edeb8b5ed13fe9d8fab88c71533c7d06a240e8b43a3a9e6bdb35056a4ff97dab",
+        "prompt_hash": "aea7b6f056018f34b7b44f0b6e1f23c250b6a13ff1632edd84676ba04ce6fb87",
+        "target_hash": "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b",
+        "acc": 1.0,
+        "acc_norm": 1.0
+      },
+      {
+        "doc_id": 13,
+        "doc": {
+          "goal": "peeler",
+          "sol1": "can be used as a decoration on a television ",
+          "sol2": "can be used as a decoration on a sock ",
+          "label": 0
+        },
+        "target": 0,
+        "arguments": [
+          [
+            "Question: peeler\nAnswer:",
+            " can be used as a decoration on a television "
+          ],
+          [
+            "Question: peeler\nAnswer:",
+            " can be used as a decoration on a sock "
+          ]
+        ],
+        "resps": [
+          [
+            [
+              -43.18434524536133,
+              false
+            ]
+          ],
+          [
+            [
+              -43.26387023925781,
+              false
+            ]
+          ]
+        ],
+        "filtered_resps": [
+          [
+            -43.18434524536133,
+            false
+          ],
+          [
+            -43.26387023925781,
+            false
+          ]
+        ],
+        "filter": "none",
+        "metrics": [
+          "acc",
+          "acc_norm"
+        ],
+        "doc_hash": "cd86d1f7dfd4655a359eeb128588343db3f02466938e54ddb77ab0d8404386cb",
+        "prompt_hash": "185609984dfb83733622b29c04775d70851a1bdcef256c020ef33e9f26a39b40",
+        "target_hash": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+        "acc": 1.0,
+        "acc_norm": 1.0
+      },
+      {
+        "doc_id": 14,
+        "doc": {
+          "goal": "How to clean blinds without tearing them up",
+          "sol1": "Place a cloth on each side of a pair of tongs.",
+          "sol2": "Find a feather duster, and cut the feathers off every two inches.",
+          "label": 0
+        },
+        "target": 0,
+        "arguments": [
+          [
+            "Question: How to clean blinds without tearing them up\nAnswer:",
+            " Place a cloth on each side of a pair of tongs."
+          ],
+          [
+            "Question: How to clean blinds without tearing them up\nAnswer:",
+            " Find a feather duster, and cut the feathers off every two inches."
+          ]
+        ],
+        "resps": [
+          [
+            [
+              -41.176368713378906,
+              false
+            ]
+          ],
+          [
+            [
+              -54.076663970947266,
+              false
+            ]
+          ]
+        ],
+        "filtered_resps": [
+          [
+            -41.176368713378906,
+            false
+          ],
+          [
+            -54.076663970947266,
+            false
+          ]
+        ],
+        "filter": "none",
+        "metrics": [
+          "acc",
+          "acc_norm"
+        ],
+        "doc_hash": "8fbe666ce7651f81fabc1ebe6baf75bdc29c1e5202072b4317b1ee3ba350f6c3",
+        "prompt_hash": "19c09760bd3108b9e203748e922d9cfb2431d504103ad571f2feba8280135209",
+        "target_hash": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+        "acc": 1.0,
+        "acc_norm": 0.0
+      },
+      {
+        "doc_id": 15,
+        "doc": {
+          "goal": "What material is a steel rocking chair made out of?",
+          "sol1": "The frame is steel and then fabric can be added if you wish.",
+          "sol2": "The frame is plastic and fabric can be added if you wish",
+          "label": 0
+        },
+        "target": 0,
+        "arguments": [
+          [
+            "Question: What material is a steel rocking chair made out of?\nAnswer:",
+            " The frame is steel and then fabric can be added if you wish."
+          ],
+          [
+            "Question: What material is a steel rocking chair made out of?\nAnswer:",
+            " The frame is plastic and fabric can be added if you wish"
+          ]
+        ],
+        "resps": [
+          [
+            [
+              -49.18025588989258,
+              false
+            ]
+          ],
+          [
+            [
+              -43.80132293701172,
+              false
+            ]
+          ]
+        ],
+        "filtered_resps": [
+          [
+            -49.18025588989258,
+            false
+          ],
+          [
+            -43.80132293701172,
+            false
+          ]
+        ],
+        "filter": "none",
+        "metrics": [
+          "acc",
+          "acc_norm"
+        ],
+        "doc_hash": "b976c004e4010d6652b425f8fa97280ad46115671501b84d013248fd5c60597a",
+        "prompt_hash": "35143160c4b2b139bf103e72ed4156f444f21f2d3d4e8d7850811e0bc95881aa",
+        "target_hash": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+        "acc": 0.0,
+        "acc_norm": 0.0
+      },
+      {
+        "doc_id": 16,
+        "doc": {
+          "goal": "To get a video game console for a cheap price,",
+          "sol1": "look for the console on a website that sells used goods.",
+          "sol2": "look up which console is the cheapest one in store.",
+          "label": 0
+        },
+        "target": 0,
+        "arguments": [
+          [
+            "Question: To get a video game console for a cheap price,\nAnswer:",
+            " look for the console on a website that sells used goods."
+          ],
+          [
+            "Question: To get a video game console for a cheap price,\nAnswer:",
+            " look up which console is the cheapest one in store."
+          ]
+        ],
+        "resps": [
+          [
+            [
+              -47.146331787109375,
+              false
+            ]
+          ],
+          [
+            [
+              -44.275062561035156,
+              false
+            ]
+          ]
+        ],
+        "filtered_resps": [
+          [
+            -47.146331787109375,
+            false
+          ],
+          [
+            -44.275062561035156,
+            false
+          ]
+        ],
+        "filter": "none",
+        "metrics": [
+          "acc",
+          "acc_norm"
+        ],
+        "doc_hash": "35b1a7c289b1eca3203f71a1b3f78a53834d803ce0552881c53c5c7f5b0aed0d",
+        "prompt_hash": "bc0c85fc06a6aecdf6569475ea7ce7f23c2433feae5c92fd7e521b8bc5f50dab",
+        "target_hash": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+        "acc": 0.0,
+        "acc_norm": 1.0
+      },
+      {
+        "doc_id": 17,
+        "doc": {
+          "goal": "How do you properly prepare a steak.",
+          "sol1": "Take the steak out of warm storage and let come to room temperature, generously add salt and pepper to both sides and let sit for 10 minutes.",
+          "sol2": "Take the steak out of cold storage and let come to room temperature, generously add salt and pepper to both sides and let sit for 10 minutes.",
+          "label": 1
+        },
+        "target": 1,
+        "arguments": [
+          [
+            "Question: How do you properly prepare a steak.\nAnswer:",
+            " Take the steak out of warm storage and let come to room temperature, generously add salt and pepper to both sides and let sit for 10 minutes."
+          ],
+          [
+            "Question: How do you properly prepare a steak.\nAnswer:",
+            " Take the steak out of cold storage and let come to room temperature, generously add salt and pepper to both sides and let sit for 10 minutes."
+          ]
+        ],
+        "resps": [
+          [
+            [
+              -84.35993194580078,
+              false
+            ]
+          ],
+          [
+            [
+              -81.4106674194336,
+              false
+            ]
+          ]
+        ],
+        "filtered_resps": [
+          [
+            -84.35993194580078,
+            false
+          ],
+          [
+            -81.4106674194336,
+            false
+          ]
+        ],
+        "filter": "none",
+        "metrics": [
+          "acc",
+          "acc_norm"
+        ],
+        "doc_hash": "f09e4029bdc34f57788af600e6437b1171e41b2dbfdcd43daca32d701f7b2908",
+        "prompt_hash": "bc3e7c9fefb80b4201934b2ff06f37da43e51096fbc7947cda6482ea98dc21dd",
+        "target_hash": "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b",
+        "acc": 1.0,
+        "acc_norm": 1.0
+      },
+      {
+        "doc_id": 18,
+        "doc": {
+          "goal": "To cream butter and sugar together, you can",
+          "sol1": "Place it in a bowl and use a hand warmer",
+          "sol2": "Place in a bowl and use a hand mixer",
+          "label": 1
+        },
+        "target": 1,
+        "arguments": [
+          [
+            "Question: To cream butter and sugar together, you can\nAnswer:",
+            " Place it in a bowl and use a hand warmer"
+          ],
+          [
+            "Question: To cream butter and sugar together, you can\nAnswer:",
+            " Place in a bowl and use a hand mixer"
+          ]
+        ],
+        "resps": [
+          [
+            [
+              -32.37361526489258,
+              false
+            ]
+          ],
+          [
+            [
+              -24.92757797241211,
+              false
+            ]
+          ]
+        ],
+        "filtered_resps": [
+          [
+            -32.37361526489258,
+            false
+          ],
+          [
+            -24.92757797241211,
+            false
+          ]
+        ],
+        "filter": "none",
+        "metrics": [
+          "acc",
+          "acc_norm"
+        ],
+        "doc_hash": "8a74c68d917f7129f924801f923235a7049416ac826bfed88406951a2f69191a",
+        "prompt_hash": "f77c578296e519b1911072d28c5074cd8517a4d0e95212f2c1a7ff165553f1f6",
+        "target_hash": "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b",
+        "acc": 1.0,
+        "acc_norm": 1.0
+      },
+      {
+        "doc_id": 19,
+        "doc": {
+          "goal": "How to best cut the meat to place on a grill?",
+          "sol1": "Place a knife on the grill for around 15 minutes for the blade to be red hot. Gently push the knife through the meat to get a perfect cut.",
+          "sol2": "Use a sharp knife or scissor and cut the meat properly as per the required size.",
+          "label": 1
+        },
+        "target": 1,
+        "arguments": [
+          [
+            "Question: How to best cut the meat to place on a grill?\nAnswer:",
+            " Place a knife on the grill for around 15 minutes for the blade to be red hot. Gently push the knife through the meat to get a perfect cut."
+          ],
+          [
+            "Question: How to best cut the meat to place on a grill?\nAnswer:",
+            " Use a sharp knife or scissor and cut the meat properly as per the required size."
+          ]
+        ],
+        "resps": [
+          [
+            [
+              -92.79788208007812,
+              false
+            ]
+          ],
+          [
+            [
+              -54.409141540527344,
+              false
+            ]
+          ]
+        ],
+        "filtered_resps": [
+          [
+            -92.79788208007812,
+            false
+          ],
+          [
+            -54.409141540527344,
+            false
+          ]
+        ],
+        "filter": "none",
+        "metrics": [
+          "acc",
+          "acc_norm"
+        ],
+        "doc_hash": "45b660951a4ba21ba3acd5b0ff7bf793fe23347f3c5a979a1ce2421cb091eec3",
+        "prompt_hash": "de5d4eb1b6897f44263b8263caa43229cb160f1ddb0c61eee529f7eb4f7c7526",
+        "target_hash": "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b",
+        "acc": 1.0,
+        "acc_norm": 0.0
+      },
+      {
+        "doc_id": 20,
+        "doc": {
+          "goal": "What alcohol do you pour for a mojito?",
+          "sol1": "Fill the glass with ice cubes so it\u2019s half full. Pour in 2 shots of white rum & 1-2 shots of freshly squeezed orange juice.",
+          "sol2": "Fill the glass with ice cubes so it\u2019s all full. Pour in 2 shots of white rum & 1-2 shots of freshly squeezed orange juice.",
+          "label": 0
+        },
+        "target": 0,
+        "arguments": [
+          [
+            "Question: What alcohol do you pour for a mojito?\nAnswer:",
+            " Fill the glass with ice cubes so it\u2019s half full. Pour in 2 shots of white rum & 1-2 shots of freshly squeezed orange juice."
+          ],
+          [
+            "Question: What alcohol do you pour for a mojito?\nAnswer:",
+            " Fill the glass with ice cubes so it\u2019s all full. Pour in 2 shots of white rum & 1-2 shots of freshly squeezed orange juice."
+          ]
+        ],
+        "resps": [
+          [
+            [
+              -95.87445068359375,
+              false
+            ]
+          ],
+          [
+            [
+              -101.1703109741211,
+              false
+            ]
+          ]
+        ],
+        "filtered_resps": [
+          [
+            -95.87445068359375,
+            false
+          ],
+          [
+            -101.1703109741211,
+            false
+          ]
+        ],
+        "filter": "none",
+        "metrics": [
+          "acc",
+          "acc_norm"
+        ],
+        "doc_hash": "13ccd5d3c228e9d81bc837774c94b4da44f00a41f577ab57a689c8de0c9bb24a",
+        "prompt_hash": "698deebe73a12ed9b3cca3506c1e6c1c00d396a3fd9ee499fd94ad22a1143e77",
+        "target_hash": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+        "acc": 1.0,
+        "acc_norm": 1.0
+      },
+      {
+        "doc_id": 21,
+        "doc": {
+          "goal": "How to start an automatic transmission car.",
+          "sol1": "Be sure it is in park, insert key into ignition, twist ignition key to start the car, release the key right after, car is now running.",
+          "sol2": "Be sure it is in park, insert key into ignition, twist ignition key to start the car, do not release the key right after, car is now running.",
+          "label": 0
+        },
+        "target": 0,
+        "arguments": [
+          [
+            "Question: How to start an automatic transmission car.\nAnswer:",
+            " Be sure it is in park, insert key into ignition, twist ignition key to start the car, release the key right after, car is now running."
+          ],
+          [
+            "Question: How to start an automatic transmission car.\nAnswer:",
+            " Be sure it is in park, insert key into ignition, twist ignition key to start the car, do not release the key right after, car is now running."
+          ]
+        ],
+        "resps": [
+          [
+            [
+              -117.27790832519531,
+              false
+            ]
+          ],
+          [
+            [
+              -121.4810791015625,
+              false
+            ]
+          ]
+        ],
+        "filtered_resps": [
+          [
+            -117.27790832519531,
+            false
+          ],
+          [
+            -121.4810791015625,
+            false
+          ]
+        ],
+        "filter": "none",
+        "metrics": [
+          "acc",
+          "acc_norm"
+        ],
+        "doc_hash": "64b49df7a662ffba12a7c0feba2e4f0e65695ec3cde3be6f5cc4ed2bef25b526",
+        "prompt_hash": "d095116c8214878ca1aa7a21d76e3a6eaaad2ea07482e035761de6e4b33832c2",
+        "target_hash": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+        "acc": 1.0,
+        "acc_norm": 0.0
+      },
+      {
+        "doc_id": 22,
+        "doc": {
+          "goal": "How to make sure all the clocks in the house are set accurately?",
+          "sol1": "Get a solar clock for a reference and place it just outside a window that gets lots of sun. Use a system of call and response once a month, having one person stationed at the solar clock who yells out the correct time and have another person move to each of the indoor clocks to check if they are showing the right time. Adjust as necessary.",
+          "sol2": "Replace all wind-ups with digital clocks. That way, you set them once, and that's it. Check the batteries once a year or if you notice anything looks a little off.",
+          "label": 1
+        },
+        "target": 1,
+        "arguments": [
+          [
+            "Question: How to make sure all the clocks in the house are set accurately?\nAnswer:",
+            " Get a solar clock for a reference and place it just outside a window that gets lots of sun. Use a system of call and response once a month, having one person stationed at the solar clock who yells out the correct time and have another person move to each of the indoor clocks to check if they are showing the right time. Adjust as necessary."
+          ],
+          [
+            "Question: How to make sure all the clocks in the house are set accurately?\nAnswer:",
+            " Replace all wind-ups with digital clocks. That way, you set them once, and that's it. Check the batteries once a year or if you notice anything looks a little off."
+          ]
+        ],
+        "resps": [
+          [
+            [
+              -272.7369689941406,
+              false
+            ]
+          ],
+          [
+            [
+              -134.683349609375,
+              false
+            ]
+          ]
+        ],
+        "filtered_resps": [
+          [
+            -272.7369689941406,
+            false
+          ],
+          [
+            -134.683349609375,
+            false
+          ]
+        ],
+        "filter": "none",
+        "metrics": [
+          "acc",
+          "acc_norm"
+        ],
+        "doc_hash": "859787744f536c352767334c98d5ea47ac73413a9b876256b709716d20c2e274",
+        "prompt_hash": "7db28a1360048cb49ef1c790bbdd7700091561d5540dd33970a93d7cdb4cef6f",
+        "target_hash": "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b",
+        "acc": 1.0,
+        "acc_norm": 0.0
+      },
+      {
+        "doc_id": 23,
+        "doc": {
+          "goal": "How do you make plain toast?",
+          "sol1": "Gather a slice of bread and a toaster, place the bread on the top of the toaster and push the button down, when the button pops up your toast is ready.",
+          "sol2": "Gather a slice of bread and a toaster, place the bread into the toaster and push the button down, when the button pops up your toast is ready.",
+          "label": 1
+        },
+        "target": 1,
+        "arguments": [
+          [
+            "Question: How do you make plain toast?\nAnswer:",
+            " Gather a slice of bread and a toaster, place the bread on the top of the toaster and push the button down, when the button pops up your toast is ready."
+          ],
+          [
+            "Question: How do you make plain toast?\nAnswer:",
+            " Gather a slice of bread and a toaster, place the bread into the toaster and push the button down, when the button pops up your toast is ready."
+          ]
+        ],
+        "resps": [
+          [
+            [
+              -101.38363647460938,
+              false
+            ]
+          ],
+          [
+            [
+              -100.34231567382812,
+              false
+            ]
+          ]
+        ],
+        "filtered_resps": [
+          [
+            -101.38363647460938,
+            false
+          ],
+          [
+            -100.34231567382812,
+            false
+          ]
+        ],
+        "filter": "none",
+        "metrics": [
+          "acc",
+          "acc_norm"
+        ],
+        "doc_hash": "074accf4c2a23af65bfe84e92ac543fb31d44c8461034d71374f08924bc7798d",
+        "prompt_hash": "f484f20c6b6dad7c4d51eb2c46b1e971c674e960a14f6d5c7084ccece1204543",
+        "target_hash": "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b",
+        "acc": 1.0,
+        "acc_norm": 0.0
+      },
+      {
+        "doc_id": 24,
+        "doc": {
+          "goal": "Make a bulletin board.",
+          "sol1": "Glue wine corks into a picture frame.",
+          "sol2": "Glue wine bottles into a picture frame.",
+          "label": 0
+        },
+        "target": 0,
+        "arguments": [
+          [
+            "Question: Make a bulletin board.\nAnswer:",
+            " Glue wine corks into a picture frame."
+          ],
+          [
+            "Question: Make a bulletin board.\nAnswer:",
+            " Glue wine bottles into a picture frame."
+          ]
+        ],
+        "resps": [
+          [
+            [
+              -46.46345520019531,
+              false
+            ]
+          ],
+          [
+            [
+              -39.36631393432617,
+              false
+            ]
+          ]
+        ],
+        "filtered_resps": [
+          [
+            -46.46345520019531,
+            false
+          ],
+          [
+            -39.36631393432617,
+            false
+          ]
+        ],
+        "filter": "none",
+        "metrics": [
+          "acc",
+          "acc_norm"
+        ],
+        "doc_hash": "6317bedaa4f60729b2f3ec5313f73e896f8cc1e8b39dfb0b29ef057989c64c25",
+        "prompt_hash": "a0759ddf3bd267fac1e559d26cd41072ace6c225d03b649fc786f162537bf05b",
+        "target_hash": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+        "acc": 0.0,
+        "acc_norm": 0.0
+      },
+      {
+        "doc_id": 25,
+        "doc": {
+          "goal": "How do you make raw nuts have more flavor.",
+          "sol1": "Boil the nuts in milk for about 20 minutes while stirring constantly.",
+          "sol2": "Toast the nuts in a skillet for a few minutes while stirring constantly.",
+          "label": 1
+        },
+        "target": 1,
+        "arguments": [
+          [
+            "Question: How do you make raw nuts have more flavor.\nAnswer:",
+            " Boil the nuts in milk for about 20 minutes while stirring constantly."
+          ],
+          [
+            "Question: How do you make raw nuts have more flavor.\nAnswer:",
+            " Toast the nuts in a skillet for a few minutes while stirring constantly."
+          ]
+        ],
+        "resps": [
+          [
+            [
+              -43.61418533325195,
+              false
+            ]
+          ],
+          [
+            [
+              -42.36933517456055,
+              false
+            ]
+          ]
+        ],
+        "filtered_resps": [
+          [
+            -43.61418533325195,
+            false
+          ],
+          [
+            -42.36933517456055,
+            false
+          ]
+        ],
+        "filter": "none",
+        "metrics": [
+          "acc",
+          "acc_norm"
+        ],
+        "doc_hash": "3e6c919d535456adfca395687de90b2cc7e5641c2e56c0ed71b909e595a9d4a8",
+        "prompt_hash": "6bf04f8558d6671c697904fc9d4710186c0a226e9dcf9d92f8be48ab67e045ea",
+        "target_hash": "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b",
+        "acc": 1.0,
+        "acc_norm": 1.0
+      },
+      {
+        "doc_id": 26,
+        "doc": {
+          "goal": "To prepare carrots before cooking with them, you can",
+          "sol1": "Run them in the sink under boiling water",
+          "sol2": "Run them in the sink under cold water",
+          "label": 1
+        },
+        "target": 1,
+        "arguments": [
+          [
+            "Question: To prepare carrots before cooking with them, you can\nAnswer:",
+            " Run them in the sink under boiling water"
+          ],
+          [
+            "Question: To prepare carrots before cooking with them, you can\nAnswer:",
+            " Run them in the sink under cold water"
+          ]
+        ],
+        "resps": [
+          [
+            [
+              -29.48641014099121,
+              false
+            ]
+          ],
+          [
+            [
+              -26.91840171813965,
+              false
+            ]
+          ]
+        ],
+        "filtered_resps": [
+          [
+            -29.48641014099121,
+            false
+          ],
+          [
+            -26.91840171813965,
+            false
+          ]
+        ],
+        "filter": "none",
+        "metrics": [
+          "acc",
+          "acc_norm"
+        ],
+        "doc_hash": "28ac870ea8c3230bccd3844737b4642fe1aa85ff0390561b81b83e5592c066ea",
+        "prompt_hash": "74813df17aeb2c2d435b5624d059961d8ba7bb86ca6cc83b3f5be56a28e095aa",
+        "target_hash": "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b",
+        "acc": 1.0,
+        "acc_norm": 1.0
+      },
+      {
+        "doc_id": 27,
+        "doc": {
+          "goal": "plastic bag",
+          "sol1": "can carry foil ",
+          "sol2": "can carry pole ",
+          "label": 0
+        },
+        "target": 0,
+        "arguments": [
+          [
+            "Question: plastic bag\nAnswer:",
+            " can carry foil "
+          ],
+          [
+            "Question: plastic bag\nAnswer:",
+            " can carry pole "
+          ]
+        ],
+        "resps": [
+          [
+            [
+              -32.45322799682617,
+              false
+            ]
+          ],
+          [
+            [
+              -34.921138763427734,
+              false
+            ]
+          ]
+        ],
+        "filtered_resps": [
+          [
+            -32.45322799682617,
+            false
+          ],
+          [
+            -34.921138763427734,
+            false
+          ]
+        ],
+        "filter": "none",
+        "metrics": [
+          "acc",
+          "acc_norm"
+        ],
+        "doc_hash": "87d8b4a015c5121010228b622250d25bfd2faad490f0fb60fe37ede92fa6c8b3",
+        "prompt_hash": "4cdf130582857fb76621a100434ba61118e7a92e70cdb04cf2d77460bf255e0f",
+        "target_hash": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+        "acc": 1.0,
+        "acc_norm": 1.0
+      },
+      {
+        "doc_id": 28,
+        "doc": {
+          "goal": "To discourage house flies from living in your home,",
+          "sol1": "keep basil plants in the kitchen or windows.",
+          "sol2": "keep lavender plants in the kitchen or window.",
+          "label": 0
+        },
+        "target": 0,
+        "arguments": [
+          [
+            "Question: To discourage house flies from living in your home,\nAnswer:",
+            " keep basil plants in the kitchen or windows."
+          ],
+          [
+            "Question: To discourage house flies from living in your home,\nAnswer:",
+            " keep lavender plants in the kitchen or window."
+          ]
+        ],
+        "resps": [
+          [
+            [
+              -42.547725677490234,
+              false
+            ]
+          ],
+          [
+            [
+              -43.61330032348633,
+              false
+            ]
+          ]
+        ],
+        "filtered_resps": [
+          [
+            -42.547725677490234,
+            false
+          ],
+          [
+            -43.61330032348633,
+            false
+          ]
+        ],
+        "filter": "none",
+        "metrics": [
+          "acc",
+          "acc_norm"
+        ],
+        "doc_hash": "60e839d274449ad6852bf871b140b460dcb81d9e33e412876148ef53b43056c0",
+        "prompt_hash": "cb87953917532a578dbf2faedef0b8892c028a55d27608d8cc949bdfabd2fc24",
+        "target_hash": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+        "acc": 1.0,
+        "acc_norm": 0.0
+      },
+      {
+        "doc_id": 29,
+        "doc": {
+          "goal": "How to make Caramel Chocolate chip Girl Scout Cookie Vanilla Ice cream at home.",
+          "sol1": "In a medium mixing bowl combine 7 cups chilled Caramelized Onions, 2 14 oz. cans sweetened condensed milk 1 teaspoon Vanilla extract.  Beat with an electric mixer until soft Peaks form. Stir in 1 1/2 cups Caramel Chocolate Chip Girl Scout cookies (Sliced in 3/4\" strips or crumbles)  and 1/2 cup Chocolate chips.  Transfer mixture to two 8x8x2 inch baking pans. Freeze about 8 hours until firm.",
+          "sol2": "In a medium mixing bowl combine 7 cups chilled whipping cream, 2 14 oz. cans sweetened condensed milk 1 teaspoon Vanilla extract.  Beat with an electric mixer until soft Peaks form. Stir in 1 1/2 cups Caramel Chocolate Chip Girl Scout cookies (Sliced in 3/4\" strips or crumbles)  and 1/2 cup Chocolate chips.  Transfer mixture to two 8x8x2 inch baking pans. Freeze about 8 hours until firm.",
+          "label": 1
+        },
+        "target": 1,
+        "arguments": [
+          [
+            "Question: How to make Caramel Chocolate chip Girl Scout Cookie Vanilla Ice cream at home.\nAnswer:",
+            " In a medium mixing bowl combine 7 cups chilled Caramelized Onions, 2 14 oz. cans sweetened condensed milk 1 teaspoon Vanilla extract.  Beat with an electric mixer until soft Peaks form. Stir in 1 1/2 cups Caramel Chocolate Chip Girl Scout cookies (Sliced in 3/4\" strips or crumbles)  and 1/2 cup Chocolate chips.  Transfer mixture to two 8x8x2 inch baking pans. Freeze about 8 hours until firm."
+          ],
+          [
+            "Question: How to make Caramel Chocolate chip Girl Scout Cookie Vanilla Ice cream at home.\nAnswer:",
+            " In a medium mixing bowl combine 7 cups chilled whipping cream, 2 14 oz. cans sweetened condensed milk 1 teaspoon Vanilla extract.  Beat with an electric mixer until soft Peaks form. Stir in 1 1/2 cups Caramel Chocolate Chip Girl Scout cookies (Sliced in 3/4\" strips or crumbles)  and 1/2 cup Chocolate chips.  Transfer mixture to two 8x8x2 inch baking pans. Freeze about 8 hours until firm."
+          ]
+        ],
+        "resps": [
+          [
+            [
+              -300.158935546875,
+              false
+            ]
+          ],
+          [
+            [
+              -293.0962829589844,
+              false
+            ]
+          ]
+        ],
+        "filtered_resps": [
+          [
+            -300.158935546875,
+            false
+          ],
+          [
+            -293.0962829589844,
+            false
+          ]
+        ],
+        "filter": "none",
+        "metrics": [
+          "acc",
+          "acc_norm"
+        ],
+        "doc_hash": "de5fd9591391f1cbae77f5b773c8176a1666abecbfbcfa31a1bd322f5f25f056",
+        "prompt_hash": "8543b06eea27eb502b48e4ca4d1882241c5e793a56277fc10429dd14adca104f",
+        "target_hash": "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b",
+        "acc": 1.0,
+        "acc_norm": 1.0
+      },
+      {
+        "doc_id": 30,
+        "doc": {
+          "goal": "To combine cake ingredients.",
+          "sol1": "In a large mixing bowl, combined three egg yolks and half of the white granulated sugar and whisk till it reaches a pale red berry mixture.",
+          "sol2": "In a large mixing bowl, combined three egg yolks and half of the white granulated sugar and whisk till it reaches a pale lemony yellow mixture.",
+          "label": 1
+        },
+        "target": 1,
+        "arguments": [
+          [
+            "Question: To combine cake ingredients.\nAnswer:",
+            " In a large mixing bowl, combined three egg yolks and half of the white granulated sugar and whisk till it reaches a pale red berry mixture."
+          ],
+          [
+            "Question: To combine cake ingredients.\nAnswer:",
+            " In a large mixing bowl, combined three egg yolks and half of the white granulated sugar and whisk till it reaches a pale lemony yellow mixture."
+          ]
+        ],
+        "resps": [
+          [
+            [
+              -100.19426727294922,
+              false
+            ]
+          ],
+          [
+            [
+              -99.13072967529297,
+              false
+            ]
+          ]
+        ],
+        "filtered_resps": [
+          [
+            -100.19426727294922,
+            false
+          ],
+          [
+            -99.13072967529297,
+            false
+          ]
+        ],
+        "filter": "none",
+        "metrics": [
+          "acc",
+          "acc_norm"
+        ],
+        "doc_hash": "525c09d73ba99434b60920cc2099a643e891f2a675db8a907b853388c44421d1",
+        "prompt_hash": "2f4dc88d552c2c1065d715443796805f4e7fa57a593f4826ed6dabe59790f684",
+        "target_hash": "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b",
+        "acc": 1.0,
+        "acc_norm": 1.0
+      },
+      {
+        "doc_id": 31,
+        "doc": {
+          "goal": "To prevent gunk buildup in cup holders of a car,",
+          "sol1": "place coffee filters inside of the cup holders.",
+          "sol2": "pour a thin layer of oil into the cup holders.",
+          "label": 0
+        },
+        "target": 0,
+        "arguments": [
+          [
+            "Question: To prevent gunk buildup in cup holders of a car,\nAnswer:",
+            " place coffee filters inside of the cup holders."
+          ],
+          [
+            "Question: To prevent gunk buildup in cup holders of a car,\nAnswer:",
+            " pour a thin layer of oil into the cup holders."
+          ]
+        ],
+        "resps": [
+          [
+            [
+              -33.24696350097656,
+              false
+            ]
+          ],
+          [
+            [
+              -29.851749420166016,
+              false
+            ]
+          ]
+        ],
+        "filtered_resps": [
+          [
+            -33.24696350097656,
+            false
+          ],
+          [
+            -29.851749420166016,
+            false
+          ]
+        ],
+        "filter": "none",
+        "metrics": [
+          "acc",
+          "acc_norm"
+        ],
+        "doc_hash": "fae48603c61050ebe63e7014c257061e2bb91d3cd2aabe3a0593519ea37ca7c8",
+        "prompt_hash": "9de9b96bc0dcd0d34f71b972a930e4c7868733ec3008e1ebf27036f9cff1cd64",
+        "target_hash": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+        "acc": 0.0,
+        "acc_norm": 0.0
+      },
+      {
+        "doc_id": 32,
+        "doc": {
+          "goal": "To quarter biscuits, you can",
+          "sol1": "Take the biscuit in your mouth and tear it into quarters",
+          "sol2": "Take the biscuit in your hand and tear it into quarters",
+          "label": 1
+        },
+        "target": 1,
+        "arguments": [
+          [
+            "Question: To quarter biscuits, you can\nAnswer:",
+            " Take the biscuit in your mouth and tear it into quarters"
+          ],
+          [
+            "Question: To quarter biscuits, you can\nAnswer:",
+            " Take the biscuit in your hand and tear it into quarters"
+          ]
+        ],
+        "resps": [
+          [
+            [
+              -36.67485809326172,
+              false
+            ]
+          ],
+          [
+            [
+              -35.859764099121094,
+              false
+            ]
+          ]
+        ],
+        "filtered_resps": [
+          [
+            -36.67485809326172,
+            false
+          ],
+          [
+            -35.859764099121094,
+            false
+          ]
+        ],
+        "filter": "none",
+        "metrics": [
+          "acc",
+          "acc_norm"
+        ],
+        "doc_hash": "7fe4bac3860d0d183e6072a7a2219e5af969c0266d656337a8d79811f21e399f",
+        "prompt_hash": "491e3ea27bb9c6412ede8873698d52b9629d68f6867895a7fc0b1e07f8202167",
+        "target_hash": "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b",
+        "acc": 1.0,
+        "acc_norm": 1.0
+      },
+      {
+        "doc_id": 33,
+        "doc": {
+          "goal": "To make a bedroom temperature colder without a fan or air conditioner,",
+          "sol1": "hang up a thick, and dark blanket over the windows and then ensure their is proper air flow in the room.",
+          "sol2": "wave a large blanket up and down to generate a gust of wind to cool the room down when it gets too hot.",
+          "label": 0
+        },
+        "target": 0,
+        "arguments": [
+          [
+            "Question: To make a bedroom temperature colder without a fan or air conditioner,\nAnswer:",
+            " hang up a thick, and dark blanket over the windows and then ensure their is proper air flow in the room."
+          ],
+          [
+            "Question: To make a bedroom temperature colder without a fan or air conditioner,\nAnswer:",
+            " wave a large blanket up and down to generate a gust of wind to cool the room down when it gets too hot."
+          ]
+        ],
+        "resps": [
+          [
+            [
+              -105.68365478515625,
+              false
+            ]
+          ],
+          [
+            [
+              -86.99561309814453,
+              false
+            ]
+          ]
+        ],
+        "filtered_resps": [
+          [
+            -105.68365478515625,
+            false
+          ],
+          [
+            -86.99561309814453,
+            false
+          ]
+        ],
+        "filter": "none",
+        "metrics": [
+          "acc",
+          "acc_norm"
+        ],
+        "doc_hash": "5ab5242bdbb94f85cb26cb6fb4a763fbc43505d1160c2a77f3a28a2db531daa1",
+        "prompt_hash": "94b22c1681d6d4efb09f3381ebfe99bf0fcd1e0722a1a04229555c8bb750b02b",
+        "target_hash": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+        "acc": 0.0,
+        "acc_norm": 0.0
+      },
+      {
+        "doc_id": 34,
+        "doc": {
+          "goal": "how to get fluffy cookies",
+          "sol1": "Chill cookie dough before putting it on a baking sheet. This will help prevent your butter from flattening and losing its fluffy texture.",
+          "sol2": "Chill cookie dough before putting it on a parchment line fish platter. This will help prevent your butter from flattening and losing its fluffy texture.",
+          "label": 0
+        },
+        "target": 0,
+        "arguments": [
+          [
+            "Question: how to get fluffy cookies\nAnswer:",
+            " Chill cookie dough before putting it on a baking sheet. This will help prevent your butter from flattening and losing its fluffy texture."
+          ],
+          [
+            "Question: how to get fluffy cookies\nAnswer:",
+            " Chill cookie dough before putting it on a parchment line fish platter. This will help prevent your butter from flattening and losing its fluffy texture."
+          ]
+        ],
+        "resps": [
+          [
+            [
+              -83.13661193847656,
+              false
+            ]
+          ],
+          [
+            [
+              -114.5188217163086,
+              false
+            ]
+          ]
+        ],
+        "filtered_resps": [
+          [
+            -83.13661193847656,
+            false
+          ],
+          [
+            -114.5188217163086,
+            false
+          ]
+        ],
+        "filter": "none",
+        "metrics": [
+          "acc",
+          "acc_norm"
+        ],
+        "doc_hash": "ae7143fd334dcc4aa5a3d5d0403af5c87e7dae9365cc47d3be32f5576d6462e4",
+        "prompt_hash": "9f4eb7a502ef15ee5f51282912a40c122212f85d3529da72e2db00ee0f690bc1",
+        "target_hash": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+        "acc": 1.0,
+        "acc_norm": 1.0
+      },
+      {
+        "doc_id": 35,
+        "doc": {
+          "goal": "How to brine a turkey before cooking?",
+          "sol1": "Boil water with spices and any adjuncts you'd like, bring the water to a cool temperature and then submerge the turkey for several hours in the cold brine",
+          "sol2": "Boil water with spices and any adjuncts you'd like, bring the water to a boiling temperature and then submerge the turkey for several hours in the hot brine",
+          "label": 0
+        },
+        "target": 0,
+        "arguments": [
+          [
+            "Question: How to brine a turkey before cooking?\nAnswer:",
+            " Boil water with spices and any adjuncts you'd like, bring the water to a cool temperature and then submerge the turkey for several hours in the cold brine"
+          ],
+          [
+            "Question: How to brine a turkey before cooking?\nAnswer:",
+            " Boil water with spices and any adjuncts you'd like, bring the water to a boiling temperature and then submerge the turkey for several hours in the hot brine"
+          ]
+        ],
+        "resps": [
+          [
+            [
+              -113.8990249633789,
+              false
+            ]
+          ],
+          [
+            [
+              -114.02977752685547,
+              false
+            ]
+          ]
+        ],
+        "filtered_resps": [
+          [
+            -113.8990249633789,
+            false
+          ],
+          [
+            -114.02977752685547,
+            false
+          ]
+        ],
+        "filter": "none",
+        "metrics": [
+          "acc",
+          "acc_norm"
+        ],
+        "doc_hash": "c9dac7066c62e360ff084efd14947fb5c64e1864ca515d7c691eca18af9c93b7",
+        "prompt_hash": "8772786bd603275926d0211e17c6ca5b989df9027061020b0dc56e05de1558b3",
+        "target_hash": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+        "acc": 1.0,
+        "acc_norm": 0.0
+      },
+      {
+        "doc_id": 36,
+        "doc": {
+          "goal": "To spare the plant while picking lettuce",
+          "sol1": "grab one leaf with one hand, bend the plant stalk near the leaf with the other hand, and pull it down and away from the leaf.",
+          "sol2": "grab one leaf with one hand, hold the stalk near the leaf with the other hand, and then pull the leaf down breaking it from the plant.",
+          "label": 1
+        },
+        "target": 1,
+        "arguments": [
+          [
+            "Question: To spare the plant while picking lettuce\nAnswer:",
+            " grab one leaf with one hand, bend the plant stalk near the leaf with the other hand, and pull it down and away from the leaf."
+          ],
+          [
+            "Question: To spare the plant while picking lettuce\nAnswer:",
+            " grab one leaf with one hand, hold the stalk near the leaf with the other hand, and then pull the leaf down breaking it from the plant."
+          ]
+        ],
+        "resps": [
+          [
+            [
+              -91.0932388305664,
+              false
+            ]
+          ],
+          [
+            [
+              -95.70757293701172,
+              false
+            ]
+          ]
+        ],
+        "filtered_resps": [
+          [
+            -91.0932388305664,
+            false
+          ],
+          [
+            -95.70757293701172,
+            false
+          ]
+        ],
+        "filter": "none",
+        "metrics": [
+          "acc",
+          "acc_norm"
+        ],
+        "doc_hash": "91900a54e6638cb933b75dd440eab7336f540624ce1d95befe301a72ae51c5c5",
+        "prompt_hash": "3f8634700c94e2b795203f3aed77ad17033b902beab881e134472d26b11c8281",
+        "target_hash": "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b",
+        "acc": 0.0,
+        "acc_norm": 1.0
+      },
+      {
+        "doc_id": 37,
+        "doc": {
+          "goal": "To cook perfectly golden pancakes,",
+          "sol1": "keep the temperature high and cook quickly.",
+          "sol2": "keep the temperature low for a longer time.",
+          "label": 1
+        },
+        "target": 1,
+        "arguments": [
+          [
+            "Question: To cook perfectly golden pancakes,\nAnswer:",
+            " keep the temperature high and cook quickly."
+          ],
+          [
+            "Question: To cook perfectly golden pancakes,\nAnswer:",
+            " keep the temperature low for a longer time."
+          ]
+        ],
+        "resps": [
+          [
+            [
+              -33.982421875,
+              false
+            ]
+          ],
+          [
+            [
+              -33.27349090576172,
+              false
+            ]
+          ]
+        ],
+        "filtered_resps": [
+          [
+            -33.982421875,
+            false
+          ],
+          [
+            -33.27349090576172,
+            false
+          ]
+        ],
+        "filter": "none",
+        "metrics": [
+          "acc",
+          "acc_norm"
+        ],
+        "doc_hash": "e4c33524c44df39f5f04109ef96184ea16fb26e8be5b49c693bc2a2e139fdb09",
+        "prompt_hash": "51598d38e489647bb59b37ef8c118762cce91f30d9b19273ce45078b8d0c73d2",
+        "target_hash": "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b",
+        "acc": 1.0,
+        "acc_norm": 1.0
+      },
+      {
+        "doc_id": 38,
+        "doc": {
+          "goal": "generate poetry by using random words.",
+          "sol1": "Find a bunch of letters you like, about 150 of them.  Print them on paper and cut them from one another.  Place the paper pieces in a cup.  Turn the cup upside down. Rewrite the letters you can see as words, add a few of your own and call it poetry.",
+          "sol2": "Find a bunch of words you like, about 50 of them.  Print them on paper and cut them from one another.  Place the paper pieces in a cup.  Turn the cup upside down. Rewrite the words you can see, add a few of your own and call it poetry.",
+          "label": 1
+        },
+        "target": 1,
+        "arguments": [
+          [
+            "Question: generate poetry by using random words.\nAnswer:",
+            " Find a bunch of letters you like, about 150 of them.  Print them on paper and cut them from one another.  Place the paper pieces in a cup.  Turn the cup upside down. Rewrite the letters you can see as words, add a few of your own and call it poetry."
+          ],
+          [
+            "Question: generate poetry by using random words.\nAnswer:",
+            " Find a bunch of words you like, about 50 of them.  Print them on paper and cut them from one another.  Place the paper pieces in a cup.  Turn the cup upside down. Rewrite the words you can see, add a few of your own and call it poetry."
+          ]
+        ],
+        "resps": [
+          [
+            [
+              -197.97207641601562,
+              false
+            ]
+          ],
+          [
+            [
+              -179.7295684814453,
+              false
+            ]
+          ]
+        ],
+        "filtered_resps": [
+          [
+            -197.97207641601562,
+            false
+          ],
+          [
+            -179.7295684814453,
+            false
+          ]
+        ],
+        "filter": "none",
+        "metrics": [
+          "acc",
+          "acc_norm"
+        ],
+        "doc_hash": "d9fcd1db29752f04b748f060d4cc15fcbde0abde53dc748a57d42f6d0a3c5a70",
+        "prompt_hash": "1641099eb11e47b6af5fcbdfa44a06f681d3d76fb5d8840a5dbc3f8ea155c9b1",
+        "target_hash": "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b",
+        "acc": 1.0,
+        "acc_norm": 1.0
+      },
+      {
+        "doc_id": 39,
+        "doc": {
+          "goal": "To fill a bucket with sand",
+          "sol1": "Take a smaller pail and fill it with sand. Dump it on the ground. Repeat until the bucket is full.",
+          "sol2": "Take a smaller pail and fill it with sand. Dump it into the bucket. Repeat until the bucket is full.",
+          "label": 1
+        },
+        "target": 1,
+        "arguments": [
+          [
+            "Question: To fill a bucket with sand\nAnswer:",
+            " Take a smaller pail and fill it with sand. Dump it on the ground. Repeat until the bucket is full."
+          ],
+          [
+            "Question: To fill a bucket with sand\nAnswer:",
+            " Take a smaller pail and fill it with sand. Dump it into the bucket. Repeat until the bucket is full."
+          ]
+        ],
+        "resps": [
+          [
+            [
+              -58.077842712402344,
+              false
+            ]
+          ],
+          [
+            [
+              -55.27674865722656,
+              false
+            ]
+          ]
+        ],
+        "filtered_resps": [
+          [
+            -58.077842712402344,
+            false
+          ],
+          [
+            -55.27674865722656,
+            false
+          ]
+        ],
+        "filter": "none",
+        "metrics": [
+          "acc",
+          "acc_norm"
+        ],
+        "doc_hash": "b2dcaf06e6b23732bca422b5de93b2d7788e9b75d8494334f9564a5590004891",
+        "prompt_hash": "a0ac9d5156432049420b4e563a4c9637052142f1ce7ccfaa2d6ff330593a7f87",
+        "target_hash": "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b",
+        "acc": 1.0,
+        "acc_norm": 1.0
+      },
+      {
+        "doc_id": 40,
+        "doc": {
+          "goal": "To set the J bolt into the concrete mix in the mold.",
+          "sol1": "Push in the J bolt into the poured concrete mix in the mold before it cures, making sure it's straight and square.",
+          "sol2": "Push in the J bolt into the poured concrete mix in the mold after it cures, making sure it's straight and square.",
+          "label": 0
+        },
+        "target": 0,
+        "arguments": [
+          [
+            "Question: To set the J bolt into the concrete mix in the mold.\nAnswer:",
+            " Push in the J bolt into the poured concrete mix in the mold before it cures, making sure it's straight and square."
+          ],
+          [
+            "Question: To set the J bolt into the concrete mix in the mold.\nAnswer:",
+            " Push in the J bolt into the poured concrete mix in the mold after it cures, making sure it's straight and square."
+          ]
+        ],
+        "resps": [
+          [
+            [
+              -72.52145385742188,
+              false
+            ]
+          ],
+          [
+            [
+              -74.088134765625,
+              false
+            ]
+          ]
+        ],
+        "filtered_resps": [
+          [
+            -72.52145385742188,
+            false
+          ],
+          [
+            -74.088134765625,
+            false
+          ]
+        ],
+        "filter": "none",
+        "metrics": [
+          "acc",
+          "acc_norm"
+        ],
+        "doc_hash": "e00765edb6dab012f9404f33a3159fee1eb290b688a2c74d3ae979a0f6c06746",
+        "prompt_hash": "abe38e5a93cb6f037943930a9bca18dc8696c11db775d6b17ecc9eaaa01c93fc",
+        "target_hash": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+        "acc": 1.0,
+        "acc_norm": 1.0
+      },
+      {
+        "doc_id": 41,
+        "doc": {
+          "goal": "Eliminate odors in the laundry room.",
+          "sol1": "Spray dirty laundry with air freshener, and open a window to clear the room of smell.",
+          "sol2": "Combine baking soda and essential oil.  Place in an open jar in laundry room.",
+          "label": 1
+        },
+        "target": 1,
+        "arguments": [
+          [
+            "Question: Eliminate odors in the laundry room.\nAnswer:",
+            " Spray dirty laundry with air freshener, and open a window to clear the room of smell."
+          ],
+          [
+            "Question: Eliminate odors in the laundry room.\nAnswer:",
+            " Combine baking soda and essential oil.  Place in an open jar in laundry room."
+          ]
+        ],
+        "resps": [
+          [
+            [
+              -67.38971710205078,
+              false
+            ]
+          ],
+          [
+            [
+              -69.39302062988281,
+              false
+            ]
+          ]
+        ],
+        "filtered_resps": [
+          [
+            -67.38971710205078,
+            false
+          ],
+          [
+            -69.39302062988281,
+            false
+          ]
+        ],
+        "filter": "none",
+        "metrics": [
+          "acc",
+          "acc_norm"
+        ],
+        "doc_hash": "deb111c291d3c21606a0a0f0638e2177dfa0d73a619a3ea5c32fabcd1e608f58",
+        "prompt_hash": "96d1ad945d6ee37157551a2b353576ffdfca09d47585a3f6259e2465ac740a3a",
+        "target_hash": "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b",
+        "acc": 0.0,
+        "acc_norm": 0.0
+      },
+      {
+        "doc_id": 42,
+        "doc": {
+          "goal": "How do I fill holes and tiny gaps in the concrete when making a concrete countertop?",
+          "sol1": "Use  a concrete slurry",
+          "sol2": "Use  a concrete brush",
+          "label": 0
+        },
+        "target": 0,
+        "arguments": [
+          [
+            "Question: How do I fill holes and tiny gaps in the concrete when making a concrete countertop?\nAnswer:",
+            " Use  a concrete slurry"
+          ],
+          [
+            "Question: How do I fill holes and tiny gaps in the concrete when making a concrete countertop?\nAnswer:",
+            " Use  a concrete brush"
+          ]
+        ],
+        "resps": [
+          [
+            [
+              -27.55284309387207,
+              false
+            ]
+          ],
+          [
+            [
+              -29.67143440246582,
+              false
+            ]
+          ]
+        ],
+        "filtered_resps": [
+          [
+            -27.55284309387207,
+            false
+          ],
+          [
+            -29.67143440246582,
+            false
+          ]
+        ],
+        "filter": "none",
+        "metrics": [
+          "acc",
+          "acc_norm"
+        ],
+        "doc_hash": "bad1f0b8a96c14cbeec251326f74cb0a08812d5e7a2e0fafdda7e8b624163267",
+        "prompt_hash": "3a6b645ec313b432a0b058e367f9062406541a92aa554e7e0eb9f2d55c0bdc7e",
+        "target_hash": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+        "acc": 1.0,
+        "acc_norm": 1.0
+      },
+      {
+        "doc_id": 43,
+        "doc": {
+          "goal": "a bucket",
+          "sol1": "can hold acid ",
+          "sol2": "can hold paint ",
+          "label": 1
+        },
+        "target": 1,
+        "arguments": [
+          [
+            "Question: a bucket\nAnswer:",
+            " can hold acid "
+          ],
+          [
+            "Question: a bucket\nAnswer:",
+            " can hold paint "
+          ]
+        ],
+        "resps": [
+          [
+            [
+              -31.912036895751953,
+              false
+            ]
+          ],
+          [
+            [
+              -31.517475128173828,
+              false
+            ]
+          ]
+        ],
+        "filtered_resps": [
+          [
+            -31.912036895751953,
+            false
+          ],
+          [
+            -31.517475128173828,
+            false
+          ]
+        ],
+        "filter": "none",
+        "metrics": [
+          "acc",
+          "acc_norm"
+        ],
+        "doc_hash": "28d6262c639d20b60639e61107a6c31556bd6a083631b69682aea7e58a853fcf",
+        "prompt_hash": "c847b5dcf7250959756cea98b91d5dc7527f3c87415cc44f58c33a90f9e0fbcb",
+        "target_hash": "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b",
+        "acc": 1.0,
+        "acc_norm": 1.0
+      },
+      {
+        "doc_id": 44,
+        "doc": {
+          "goal": "When I'm deep frying a turkey, how defrosted should it be?",
+          "sol1": "It should be completely defrosted, otherwise the oil may boil over and start a fire.",
+          "sol2": "It should be completely frozen, otherwise the oil may boil over and start a fire.",
+          "label": 0
+        },
+        "target": 0,
+        "arguments": [
+          [
+            "Question: When I'm deep frying a turkey, how defrosted should it be?\nAnswer:",
+            " It should be completely defrosted, otherwise the oil may boil over and start a fire."
+          ],
+          [
+            "Question: When I'm deep frying a turkey, how defrosted should it be?\nAnswer:",
+            " It should be completely frozen, otherwise the oil may boil over and start a fire."
+          ]
+        ],
+        "resps": [
+          [
+            [
+              -48.75209045410156,
+              false
+            ]
+          ],
+          [
+            [
+              -51.46063232421875,
+              false
+            ]
+          ]
+        ],
+        "filtered_resps": [
+          [
+            -48.75209045410156,
+            false
+          ],
+          [
+            -51.46063232421875,
+            false
+          ]
+        ],
+        "filter": "none",
+        "metrics": [
+          "acc",
+          "acc_norm"
+        ],
+        "doc_hash": "a9d5cb8e9acf6ce60df8956ded5a87fe0fdd81cfb571e433a04c7c355d8c1a0c",
+        "prompt_hash": "cc4d9aaa6ab9a10c8deb6b5bb4c34f7e0216a3477999b86c26da7f8f893826f6",
+        "target_hash": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+        "acc": 1.0,
+        "acc_norm": 1.0
+      },
+      {
+        "doc_id": 45,
+        "doc": {
+          "goal": "How do you remove gum from being stuck in hair?",
+          "sol1": "Apply an ice cube and gently remove the hardened gum.",
+          "sol2": "Use a blow dryer and gently remove melted gum.",
+          "label": 0
+        },
+        "target": 0,
+        "arguments": [
+          [
+            "Question: How do you remove gum from being stuck in hair?\nAnswer:",
+            " Apply an ice cube and gently remove the hardened gum."
+          ],
+          [
+            "Question: How do you remove gum from being stuck in hair?\nAnswer:",
+            " Use a blow dryer and gently remove melted gum."
+          ]
+        ],
+        "resps": [
+          [
+            [
+              -39.47355651855469,
+              false
+            ]
+          ],
+          [
+            [
+              -38.44738006591797,
+              false
+            ]
+          ]
+        ],
+        "filtered_resps": [
+          [
+            -39.47355651855469,
+            false
+          ],
+          [
+            -38.44738006591797,
+            false
+          ]
+        ],
+        "filter": "none",
+        "metrics": [
+          "acc",
+          "acc_norm"
+        ],
+        "doc_hash": "eb5efd752b4966bd06702dfe3fb5a7caf641ca096bbf0d9a7d363d8b647ac4e8",
+        "prompt_hash": "bb63d2b617ed49328533a2f2653ba4ed86ee26814b8f0964036f04a0024fd39f",
+        "target_hash": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+        "acc": 0.0,
+        "acc_norm": 1.0
+      },
+      {
+        "doc_id": 46,
+        "doc": {
+          "goal": "fire",
+          "sol1": "can melt humans ",
+          "sol2": "can melt water ",
+          "label": 0
+        },
+        "target": 0,
+        "arguments": [
+          [
+            "Question: fire\nAnswer:",
+            " can melt humans "
+          ],
+          [
+            "Question: fire\nAnswer:",
+            " can melt water "
+          ]
+        ],
+        "resps": [
+          [
+            [
+              -36.02592849731445,
+              false
+            ]
+          ],
+          [
+            [
+              -30.667593002319336,
+              false
+            ]
+          ]
+        ],
+        "filtered_resps": [
+          [
+            -36.02592849731445,
+            false
+          ],
+          [
+            -30.667593002319336,
+            false
+          ]
+        ],
+        "filter": "none",
+        "metrics": [
+          "acc",
+          "acc_norm"
+        ],
+        "doc_hash": "22b4d808088d0506e3de3a44e88258ae53d90a1c5586fb03b9c342849ca42c82",
+        "prompt_hash": "b983206e33b18b320ec756ed5b8721f20791944218faa583afe64a9a217cb7af",
+        "target_hash": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+        "acc": 0.0,
+        "acc_norm": 0.0
+      },
+      {
+        "doc_id": 47,
+        "doc": {
+          "goal": "How long should liquid nails dry?",
+          "sol1": "Just because liquid nails look dry in a short period of time it does not mean it is dried to maximum strength.",
+          "sol2": "Liquid nails should be adhered to surfaces for 24 hours, taking a full week to completely cure to maximum strength",
+          "label": 1
+        },
+        "target": 1,
+        "arguments": [
+          [
+            "Question: How long should liquid nails dry?\nAnswer:",
+            " Just because liquid nails look dry in a short period of time it does not mean it is dried to maximum strength."
+          ],
+          [
+            "Question: How long should liquid nails dry?\nAnswer:",
+            " Liquid nails should be adhered to surfaces for 24 hours, taking a full week to completely cure to maximum strength"
+          ]
+        ],
+        "resps": [
+          [
+            [
+              -67.79948425292969,
+              false
+            ]
+          ],
+          [
+            [
+              -81.75833129882812,
+              false
+            ]
+          ]
+        ],
+        "filtered_resps": [
+          [
+            -67.79948425292969,
+            false
+          ],
+          [
+            -81.75833129882812,
+            false
+          ]
+        ],
+        "filter": "none",
+        "metrics": [
+          "acc",
+          "acc_norm"
+        ],
+        "doc_hash": "00d2df1268c898658a695347ff80c6a320c1338024e26ed3da1313b81f4c9920",
+        "prompt_hash": "6a63b01b95e12894dd368d9e151be67fd76b233a7f6374585d553d2f6d8a4870",
+        "target_hash": "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b",
+        "acc": 0.0,
+        "acc_norm": 0.0
+      },
+      {
+        "doc_id": 48,
+        "doc": {
+          "goal": "To get the best deal at amusement parks,",
+          "sol1": "buy a seasonal pass, so you can go all winter long for one discounted rate.",
+          "sol2": "buy a seasonal pass, so you can go all summer long for one discounted rate.",
+          "label": 1
+        },
+        "target": 1,
+        "arguments": [
+          [
+            "Question: To get the best deal at amusement parks,\nAnswer:",
+            " buy a seasonal pass, so you can go all winter long for one discounted rate."
+          ],
+          [
+            "Question: To get the best deal at amusement parks,\nAnswer:",
+            " buy a seasonal pass, so you can go all summer long for one discounted rate."
+          ]
+        ],
+        "resps": [
+          [
+            [
+              -75.25184631347656,
+              false
+            ]
+          ],
+          [
+            [
+              -74.0123291015625,
+              false
+            ]
+          ]
+        ],
+        "filtered_resps": [
+          [
+            -75.25184631347656,
+            false
+          ],
+          [
+            -74.0123291015625,
+            false
+          ]
+        ],
+        "filter": "none",
+        "metrics": [
+          "acc",
+          "acc_norm"
+        ],
+        "doc_hash": "6de1a683e43d2c2cf206749f8dec95abf3e4894c200573a29b8753a8a45694ae",
+        "prompt_hash": "d2ed38a6f119a4452d325e6cdc2708ea1bd8e14dad23e997f25872fe17526c71",
+        "target_hash": "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b",
+        "acc": 1.0,
+        "acc_norm": 1.0
+      },
+      {
+        "doc_id": 49,
+        "doc": {
+          "goal": "One seeks to make a cord weave.",
+          "sol1": "One will need a short amount of cord.",
+          "sol2": "One will need a long amount of cord.",
+          "label": 1
+        },
+        "target": 1,
+        "arguments": [
+          [
+            "Question: One seeks to make a cord weave.\nAnswer:",
+            " One will need a short amount of cord."
+          ],
+          [
+            "Question: One seeks to make a cord weave.\nAnswer:",
+            " One will need a long amount of cord."
+          ]
+        ],
+        "resps": [
+          [
+            [
+              -32.135902404785156,
+              false
+            ]
+          ],
+          [
+            [
+              -31.332849502563477,
+              false
+            ]
+          ]
+        ],
+        "filtered_resps": [
+          [
+            -32.135902404785156,
+            false
+          ],
+          [
+            -31.332849502563477,
+            false
+          ]
+        ],
+        "filter": "none",
+        "metrics": [
+          "acc",
+          "acc_norm"
+        ],
+        "doc_hash": "03513b83ded3edc5b378735dedb6a46aa3c020561db30c4344113c09f28d2d77",
+        "prompt_hash": "2a8cd1a706457bc0ffba6b78a41c91465d93c5ff57ede5f6b3e45a93ec0024be",
+        "target_hash": "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b",
+        "acc": 1.0,
+        "acc_norm": 0.0
+      },
+      {
+        "doc_id": 50,
+        "doc": {
+          "goal": "To make wires look like tree branches on a wire tree.",
+          "sol1": "Bend wires grouped tightly together into loops. Use kitchen scissors to cut in the middle of the loops. Use needle nose pliers to pull strands of wires away from each other to look like branches.",
+          "sol2": "Bend wires grouped tightly together into loops. Use wire cutters to cut in the middle of the loops. Use needle nose pliers to pull strands of wires away from each other to look like branches.",
+          "label": 1
+        },
+        "target": 1,
+        "arguments": [
+          [
+            "Question: To make wires look like tree branches on a wire tree.\nAnswer:",
+            " Bend wires grouped tightly together into loops. Use kitchen scissors to cut in the middle of the loops. Use needle nose pliers to pull strands of wires away from each other to look like branches."
+          ],
+          [
+            "Question: To make wires look like tree branches on a wire tree.\nAnswer:",
+            " Bend wires grouped tightly together into loops. Use wire cutters to cut in the middle of the loops. Use needle nose pliers to pull strands of wires away from each other to look like branches."
+          ]
+        ],
+        "resps": [
+          [
+            [
+              -138.1337127685547,
+              false
+            ]
+          ],
+          [
+            [
+              -132.32508850097656,
+              false
+            ]
+          ]
+        ],
+        "filtered_resps": [
+          [
+            -138.1337127685547,
+            false
+          ],
+          [
+            -132.32508850097656,
+            false
+          ]
+        ],
+        "filter": "none",
+        "metrics": [
+          "acc",
+          "acc_norm"
+        ],
+        "doc_hash": "b15e898720027d266f10787b7fa822082025b565f69c3c46bb052a5f045f0ff7",
+        "prompt_hash": "c0c03a67e00af8da5d5c62f8d7bee9cc81afda8ee113ee0899e7b2d16c1c8444",
+        "target_hash": "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b",
+        "acc": 1.0,
+        "acc_norm": 1.0
+      },
+      {
+        "doc_id": 51,
+        "doc": {
+          "goal": "How do I remove wrinkles from a new leather jacket that has never been worn",
+          "sol1": "After taking a hot shower, hang the jacket in the bedroom closet but don't let it touch any water. The steam from the shower should help get rid of the wrinkles.",
+          "sol2": "After taking a hot shower, hang the jacket in the shower but don't let it touch any water. The steam from the shower should help get rid of the wrinkles.",
+          "label": 1
+        },
+        "target": 1,
+        "arguments": [
+          [
+            "Question: How do I remove wrinkles from a new leather jacket that has never been worn\nAnswer:",
+            " After taking a hot shower, hang the jacket in the bedroom closet but don't let it touch any water. The steam from the shower should help get rid of the wrinkles."
+          ],
+          [
+            "Question: How do I remove wrinkles from a new leather jacket that has never been worn\nAnswer:",
+            " After taking a hot shower, hang the jacket in the shower but don't let it touch any water. The steam from the shower should help get rid of the wrinkles."
+          ]
+        ],
+        "resps": [
+          [
+            [
+              -105.44145965576172,
+              false
+            ]
+          ],
+          [
+            [
+              -95.2777328491211,
+              false
+            ]
+          ]
+        ],
+        "filtered_resps": [
+          [
+            -105.44145965576172,
+            false
+          ],
+          [
+            -95.2777328491211,
+            false
+          ]
+        ],
+        "filter": "none",
+        "metrics": [
+          "acc",
+          "acc_norm"
+        ],
+        "doc_hash": "d22a493e03c911717adecb01919dc9225aec00d95de48180ec3ea431f3790fb9",
+        "prompt_hash": "1fc26fe75ffd2c5930ecc855153dfae03f2f84583eee5e60702550c4c00ffca3",
+        "target_hash": "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b",
+        "acc": 1.0,
+        "acc_norm": 1.0
+      },
+      {
+        "doc_id": 52,
+        "doc": {
+          "goal": "Kill fruit flies easily.",
+          "sol1": "Spray with alcohol, then sweep away.",
+          "sol2": "Spray with water, then sweep away.",
+          "label": 0
+        },
+        "target": 0,
+        "arguments": [
+          [
+            "Question: Kill fruit flies easily.\nAnswer:",
+            " Spray with alcohol, then sweep away."
+          ],
+          [
+            "Question: Kill fruit flies easily.\nAnswer:",
+            " Spray with water, then sweep away."
+          ]
+        ],
+        "resps": [
+          [
+            [
+              -38.37114334106445,
+              false
+            ]
+          ],
+          [
+            [
+              -34.18914031982422,
+              false
+            ]
+          ]
+        ],
+        "filtered_resps": [
+          [
+            -38.37114334106445,
+            false
+          ],
+          [
+            -34.18914031982422,
+            false
+          ]
+        ],
+        "filter": "none",
+        "metrics": [
+          "acc",
+          "acc_norm"
+        ],
+        "doc_hash": "655c9ec21d340fb2d5a1b69d796357172d48c6ac018ffef0521c36eef3b3f7cf",
+        "prompt_hash": "4df8cb388415abcbf6e63444ab50d11e51aa993eb8b84fcc939523a8ed649e62",
+        "target_hash": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+        "acc": 0.0,
+        "acc_norm": 0.0
+      },
+      {
+        "doc_id": 53,
+        "doc": {
+          "goal": "To prevent splinters from cut wood,",
+          "sol1": "use a fine grained sandpaper to sand down rough cut edges.",
+          "sol2": "use a fine grained nail file to sand down rough cut edges.",
+          "label": 0
+        },
+        "target": 0,
+        "arguments": [
+          [
+            "Question: To prevent splinters from cut wood,\nAnswer:",
+            " use a fine grained sandpaper to sand down rough cut edges."
+          ],
+          [
+            "Question: To prevent splinters from cut wood,\nAnswer:",
+            " use a fine grained nail file to sand down rough cut edges."
+          ]
+        ],
+        "resps": [
+          [
+            [
+              -52.99004364013672,
+              false
+            ]
+          ],
+          [
+            [
+              -56.822872161865234,
+              false
+            ]
+          ]
+        ],
+        "filtered_resps": [
+          [
+            -52.99004364013672,
+            false
+          ],
+          [
+            -56.822872161865234,
+            false
+          ]
+        ],
+        "filter": "none",
+        "metrics": [
+          "acc",
+          "acc_norm"
+        ],
+        "doc_hash": "20f25890098b614c5f800ff05d5448c9bfd6145bb4030d4ee54a985d04372bcf",
+        "prompt_hash": "bfd53ce60786e12e3a7e677f9719256b810288712da676a55e6c3fa3de539e6a",
+        "target_hash": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+        "acc": 1.0,
+        "acc_norm": 1.0
+      },
+      {
+        "doc_id": 54,
+        "doc": {
+          "goal": "Trim apple trees.",
+          "sol1": "Use a chainsaw to cut all the limbs off the tree.",
+          "sol2": "Get your limb trimmer out and sharpen the blades with a stone.",
+          "label": 1
+        },
+        "target": 1,
+        "arguments": [
+          [
+            "Question: Trim apple trees.\nAnswer:",
+            " Use a chainsaw to cut all the limbs off the tree."
+          ],
+          [
+            "Question: Trim apple trees.\nAnswer:",
+            " Get your limb trimmer out and sharpen the blades with a stone."
+          ]
+        ],
+        "resps": [
+          [
+            [
+              -40.82331848144531,
+              false
+            ]
+          ],
+          [
+            [
+              -66.90853118896484,
+              false
+            ]
+          ]
+        ],
+        "filtered_resps": [
+          [
+            -40.82331848144531,
+            false
+          ],
+          [
+            -66.90853118896484,
+            false
+          ]
+        ],
+        "filter": "none",
+        "metrics": [
+          "acc",
+          "acc_norm"
+        ],
+        "doc_hash": "3ae4869090b5fbec0ff6507b1bd3f870ff10cfd5bced07ee091907e3296002bc",
+        "prompt_hash": "865c54a28acae0a2ded680173b7e7574aa31a565c84784f8483e38e4f6d5e384",
+        "target_hash": "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b",
+        "acc": 0.0,
+        "acc_norm": 0.0
+      },
+      {
+        "doc_id": 55,
+        "doc": {
+          "goal": "How to easily form a perfectly round snowball?",
+          "sol1": "Once the basic ball is formed, heat up a hand warmer and keeping it in your hand shape a circle out of the snowball",
+          "sol2": "Before the basic ball is formed, heat up a hand warmer and keeping it in your pocket shape a circle out of the snowball",
+          "label": 0
+        },
+        "target": 0,
+        "arguments": [
+          [
+            "Question: How to easily form a perfectly round snowball?\nAnswer:",
+            " Once the basic ball is formed, heat up a hand warmer and keeping it in your hand shape a circle out of the snowball"
+          ],
+          [
+            "Question: How to easily form a perfectly round snowball?\nAnswer:",
+            " Before the basic ball is formed, heat up a hand warmer and keeping it in your pocket shape a circle out of the snowball"
+          ]
+        ],
+        "resps": [
+          [
+            [
+              -102.40817260742188,
+              false
+            ]
+          ],
+          [
+            [
+              -115.29844665527344,
+              false
+            ]
+          ]
+        ],
+        "filtered_resps": [
+          [
+            -102.40817260742188,
+            false
+          ],
+          [
+            -115.29844665527344,
+            false
+          ]
+        ],
+        "filter": "none",
+        "metrics": [
+          "acc",
+          "acc_norm"
+        ],
+        "doc_hash": "fd37ce8dd624faf67ce15849b0786b401b08316363dc4375bc9f63b1bf1bdd81",
+        "prompt_hash": "50d4cebf65d3a17af6855b072d2500d8b3ea62df059d1972047294202ecdcdb0",
+        "target_hash": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+        "acc": 1.0,
+        "acc_norm": 1.0
+      },
+      {
+        "doc_id": 56,
+        "doc": {
+          "goal": "How do I get my coffee to taste less dark?",
+          "sol1": "Add a little bit of milk or creamer to the coffee.",
+          "sol2": "Add a little bit of more coffee to the drink.",
+          "label": 0
+        },
+        "target": 0,
+        "arguments": [
+          [
+            "Question: How do I get my coffee to taste less dark?\nAnswer:",
+            " Add a little bit of milk or creamer to the coffee."
+          ],
+          [
+            "Question: How do I get my coffee to taste less dark?\nAnswer:",
+            " Add a little bit of more coffee to the drink."
+          ]
+        ],
+        "resps": [
+          [
+            [
+              -37.960365295410156,
+              false
+            ]
+          ],
+          [
+            [
+              -30.76782989501953,
+              false
+            ]
+          ]
+        ],
+        "filtered_resps": [
+          [
+            -37.960365295410156,
+            false
+          ],
+          [
+            -30.76782989501953,
+            false
+          ]
+        ],
+        "filter": "none",
+        "metrics": [
+          "acc",
+          "acc_norm"
+        ],
+        "doc_hash": "35d173dd78e8e1dad9b3b17fe2bce245d17e77f55e2777b32587a6fed9d491db",
+        "prompt_hash": "63f82e4d180e5c77952b3076627b6383daf40c49454ba1dc9cab89fdadc9ca33",
+        "target_hash": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+        "acc": 0.0,
+        "acc_norm": 0.0
+      },
+      {
+        "doc_id": 57,
+        "doc": {
+          "goal": "how do you use headphones?",
+          "sol1": "plug them into your device.",
+          "sol2": "plug them into your device and then place the headphones over your head to where each side is covering your ears.",
+          "label": 1
+        },
+        "target": 1,
+        "arguments": [
+          [
+            "Question: how do you use headphones?\nAnswer:",
+            " plug them into your device."
+          ],
+          [
+            "Question: how do you use headphones?\nAnswer:",
+            " plug them into your device and then place the headphones over your head to where each side is covering your ears."
+          ]
+        ],
+        "resps": [
+          [
+            [
+              -18.296728134155273,
+              false
+            ]
+          ],
+          [
+            [
+              -73.9593505859375,
+              false
+            ]
+          ]
+        ],
+        "filtered_resps": [
+          [
+            -18.296728134155273,
+            false
+          ],
+          [
+            -73.9593505859375,
+            false
+          ]
+        ],
+        "filter": "none",
+        "metrics": [
+          "acc",
+          "acc_norm"
+        ],
+        "doc_hash": "6b53b3ec93aa114323824f65f5db167c4f4c8981005b4ad0087e2eab3bab73f1",
+        "prompt_hash": "089054b3e372971ca2d081f2e82b6ace10e060c48103f99e0f685adb9a93257d",
+        "target_hash": "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b",
+        "acc": 0.0,
+        "acc_norm": 1.0
+      },
+      {
+        "doc_id": 58,
+        "doc": {
+          "goal": "After staining wood, you should",
+          "sol1": "Allow it to sit for several hours so the stain can dry",
+          "sol2": "Allow it to sit for several months so the stain can dry",
+          "label": 0
+        },
+        "target": 0,
+        "arguments": [
+          [
+            "Question: After staining wood, you should\nAnswer:",
+            " Allow it to sit for several hours so the stain can dry"
+          ],
+          [
+            "Question: After staining wood, you should\nAnswer:",
+            " Allow it to sit for several months so the stain can dry"
+          ]
+        ],
+        "resps": [
+          [
+            [
+              -40.964569091796875,
+              false
+            ]
+          ],
+          [
+            [
+              -46.737064361572266,
+              false
+            ]
+          ]
+        ],
+        "filtered_resps": [
+          [
+            -40.964569091796875,
+            false
+          ],
+          [
+            -46.737064361572266,
+            false
+          ]
+        ],
+        "filter": "none",
+        "metrics": [
+          "acc",
+          "acc_norm"
+        ],
+        "doc_hash": "2307542865a144dd632386e3cb3d2880e92935a2c03325f8577eadce8255375e",
+        "prompt_hash": "4a77bee9feb438c6b283dcdfa6d55ff05ac3d12078ff47220f596b0bb4bd1d6d",
+        "target_hash": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+        "acc": 1.0,
+        "acc_norm": 1.0
+      },
+      {
+        "doc_id": 59,
+        "doc": {
+          "goal": "How to order room service",
+          "sol1": "Pick up the landline phone in your hotel room or villa. Dial the number provided for room service or zero for the operator. Order from the menu.",
+          "sol2": "Pick up the landline phone in your hotel room or village. Dial the number provided for room service or zero for the operator. Order from the menu.",
+          "label": 0
+        },
+        "target": 0,
+        "arguments": [
+          [
+            "Question: How to order room service\nAnswer:",
+            " Pick up the landline phone in your hotel room or villa. Dial the number provided for room service or zero for the operator. Order from the menu."
+          ],
+          [
+            "Question: How to order room service\nAnswer:",
+            " Pick up the landline phone in your hotel room or village. Dial the number provided for room service or zero for the operator. Order from the menu."
+          ]
+        ],
+        "resps": [
+          [
+            [
+              -120.35002899169922,
+              false
+            ]
+          ],
+          [
+            [
+              -121.70308685302734,
+              false
+            ]
+          ]
+        ],
+        "filtered_resps": [
+          [
+            -120.35002899169922,
+            false
+          ],
+          [
+            -121.70308685302734,
+            false
+          ]
+        ],
+        "filter": "none",
+        "metrics": [
+          "acc",
+          "acc_norm"
+        ],
+        "doc_hash": "4bb14c6c8c4347c32faf196867371802c4f72a547d8a0349e8f6a29f135723aa",
+        "prompt_hash": "718c4e2569e2ca9849cc83f9e0070d3d1f84cfb8ae038c55fb2b3b027c4e81d5",
+        "target_hash": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+        "acc": 1.0,
+        "acc_norm": 0.0
+      },
+      {
+        "doc_id": 60,
+        "doc": {
+          "goal": "How to sneak past guards in Metal Gear NES?",
+          "sol1": "Wait until they say \"I feel asleep!\" and walk past, or wait until they face another direction.",
+          "sol2": "Wait until they say \"I'm feeling sleepy!\" and walk past, or wait until they face another direction.",
+          "label": 1
+        },
+        "target": 1,
+        "arguments": [
+          [
+            "Question: How to sneak past guards in Metal Gear NES?\nAnswer:",
+            " Wait until they say \"I feel asleep!\" and walk past, or wait until they face another direction."
+          ],
+          [
+            "Question: How to sneak past guards in Metal Gear NES?\nAnswer:",
+            " Wait until they say \"I'm feeling sleepy!\" and walk past, or wait until they face another direction."
+          ]
+        ],
+        "resps": [
+          [
+            [
+              -93.31254577636719,
+              false
+            ]
+          ],
+          [
+            [
+              -95.34280395507812,
+              false
+            ]
+          ]
+        ],
+        "filtered_resps": [
+          [
+            -93.31254577636719,
+            false
+          ],
+          [
+            -95.34280395507812,
+            false
+          ]
+        ],
+        "filter": "none",
+        "metrics": [
+          "acc",
+          "acc_norm"
+        ],
+        "doc_hash": "35a3bb23671c9dbedeca580645071cade28d896d8f40e547ff9891153f9b20d0",
+        "prompt_hash": "b156bd3aafa261020169fe37d64a6350e61e0ca0680fff8cce7c7aeb40f7d74a",
+        "target_hash": "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b",
+        "acc": 0.0,
+        "acc_norm": 1.0
+      },
+      {
+        "doc_id": 61,
+        "doc": {
+          "goal": "What are the benefits of anti-allergen vacuum cleaners?",
+          "sol1": "Even though they are much more expensive, anti-allergen vacuum cleaners, by preventing allergens from being present in you home, will keep your family much healthier in the long run.",
+          "sol2": "Even though they are much less expensive, anti-allergen vacuum cleaners, by preventing allergens from being present in you home, will keep your family much healthier in the long run.",
+          "label": 0
+        },
+        "target": 0,
+        "arguments": [
+          [
+            "Question: What are the benefits of anti-allergen vacuum cleaners?\nAnswer:",
+            " Even though they are much more expensive, anti-allergen vacuum cleaners, by preventing allergens from being present in you home, will keep your family much healthier in the long run."
+          ],
+          [
+            "Question: What are the benefits of anti-allergen vacuum cleaners?\nAnswer:",
+            " Even though they are much less expensive, anti-allergen vacuum cleaners, by preventing allergens from being present in you home, will keep your family much healthier in the long run."
+          ]
+        ],
+        "resps": [
+          [
+            [
+              -94.71135711669922,
+              false
+            ]
+          ],
+          [
+            [
+              -96.58238220214844,
+              false
+            ]
+          ]
+        ],
+        "filtered_resps": [
+          [
+            -94.71135711669922,
+            false
+          ],
+          [
+            -96.58238220214844,
+            false
+          ]
+        ],
+        "filter": "none",
+        "metrics": [
+          "acc",
+          "acc_norm"
+        ],
+        "doc_hash": "eaecc574163ed08660a358520323671818a3fc24e6beca60f3421f7fc9cca5f2",
+        "prompt_hash": "0c9a787e78f804a1d6836851fc405a013c9f4c7907e29416b3d27f202c3e56f4",
+        "target_hash": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+        "acc": 1.0,
+        "acc_norm": 1.0
+      },
+      {
+        "doc_id": 62,
+        "doc": {
+          "goal": "How do you make an oil and vinegar dressing?",
+          "sol1": "3 tablespoons extra virgin olive oil (or a more neutral-flavored oil like grapeseed, canola, or vegetable) 1 tablespoon white wine vinegar (or balsamic, apple cider, rice, sherry, or other wine vinegar) Pinch of kosher salt. A turn of freshly ground black pepper.",
+          "sol2": "3 tablespoons extra virgin olive oil (or a more neutral-flavored oil like grapeseed, canola, or vegetable) 1 tablespoon white wine vinegar (or balsamic, apple cider, rice, sherry, or other wine vinegar) Pinch of kosher salt. A turn of freshly ground red pepper.",
+          "label": 0
+        },
+        "target": 0,
+        "arguments": [
+          [
+            "Question: How do you make an oil and vinegar dressing?\nAnswer:",
+            " 3 tablespoons extra virgin olive oil (or a more neutral-flavored oil like grapeseed, canola, or vegetable) 1 tablespoon white wine vinegar (or balsamic, apple cider, rice, sherry, or other wine vinegar) Pinch of kosher salt. A turn of freshly ground black pepper."
+          ],
+          [
+            "Question: How do you make an oil and vinegar dressing?\nAnswer:",
+            " 3 tablespoons extra virgin olive oil (or a more neutral-flavored oil like grapeseed, canola, or vegetable) 1 tablespoon white wine vinegar (or balsamic, apple cider, rice, sherry, or other wine vinegar) Pinch of kosher salt. A turn of freshly ground red pepper."
+          ]
+        ],
+        "resps": [
+          [
+            [
+              -177.07794189453125,
+              false
+            ]
+          ],
+          [
+            [
+              -184.21197509765625,
+              false
+            ]
+          ]
+        ],
+        "filtered_resps": [
+          [
+            -177.07794189453125,
+            false
+          ],
+          [
+            -184.21197509765625,
+            false
+          ]
+        ],
+        "filter": "none",
+        "metrics": [
+          "acc",
+          "acc_norm"
+        ],
+        "doc_hash": "31d304a797f67f46053566af1b64ad56fa64a50e9c211d6b83072412eab0b575",
+        "prompt_hash": "3158d50da63b017a955c11860ae6a266fc435d69b8d474e059664a08177f7707",
+        "target_hash": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+        "acc": 1.0,
+        "acc_norm": 1.0
+      },
+      {
+        "doc_id": 63,
+        "doc": {
+          "goal": "Avoid germs from hotel bed.",
+          "sol1": "Use a bed sheet under hotel bed.",
+          "sol2": "Use a bed sheet over hotel bed.",
+          "label": 1
+        },
+        "target": 1,
+        "arguments": [
+          [
+            "Question: Avoid germs from hotel bed.\nAnswer:",
+            " Use a bed sheet under hotel bed."
+          ],
+          [
+            "Question: Avoid germs from hotel bed.\nAnswer:",
+            " Use a bed sheet over hotel bed."
+          ]
+        ],
+        "resps": [
+          [
+            [
+              -28.531715393066406,
+              false
+            ]
+          ],
+          [
+            [
+              -29.61836051940918,
+              false
+            ]
+          ]
+        ],
+        "filtered_resps": [
+          [
+            -28.531715393066406,
+            false
+          ],
+          [
+            -29.61836051940918,
+            false
+          ]
+        ],
+        "filter": "none",
+        "metrics": [
+          "acc",
+          "acc_norm"
+        ],
+        "doc_hash": "b0cf982d9adae98614a4266cc2a5760964093fd8a5f2e9564f8d2a9601d57345",
+        "prompt_hash": "17b02309095dea8310eb58fd13e7c26c0994388d10ca099033dae07dc7af05d6",
+        "target_hash": "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b",
+        "acc": 0.0,
+        "acc_norm": 0.0
+      },
+      {
+        "doc_id": 64,
+        "doc": {
+          "goal": "To allow the oil for the turkey fryer to reach the correct cooking temp",
+          "sol1": "Allow approximately 40 mins for the oil to come up to the correct temperature.",
+          "sol2": "Allow approximately 4 hours for the oil to come up to the correct temperature.",
+          "label": 0
+        },
+        "target": 0,
+        "arguments": [
+          [
+            "Question: To allow the oil for the turkey fryer to reach the correct cooking temp\nAnswer:",
+            " Allow approximately 40 mins for the oil to come up to the correct temperature."
+          ],
+          [
+            "Question: To allow the oil for the turkey fryer to reach the correct cooking temp\nAnswer:",
+            " Allow approximately 4 hours for the oil to come up to the correct temperature."
+          ]
+        ],
+        "resps": [
+          [
+            [
+              -40.73323440551758,
+              false
+            ]
+          ],
+          [
+            [
+              -34.053245544433594,
+              false
+            ]
+          ]
+        ],
+        "filtered_resps": [
+          [
+            -40.73323440551758,
+            false
+          ],
+          [
+            -34.053245544433594,
+            false
+          ]
+        ],
+        "filter": "none",
+        "metrics": [
+          "acc",
+          "acc_norm"
+        ],
+        "doc_hash": "9002d22922e38d26dcd18b3969d4339cbb0c2bedf7ea76bf8551fc0a1e0285a1",
+        "prompt_hash": "caac10ad66e0ccf634cd863a1201effc7f88e133439d4516957f57436a2db2e3",
+        "target_hash": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+        "acc": 0.0,
+        "acc_norm": 0.0
+      },
+      {
+        "doc_id": 65,
+        "doc": {
+          "goal": "how to clean a container that held melted wax",
+          "sol1": "Heat the measuring cup so that all the wax inside is liquid. Then wipe out measuring cup with a paper towel. Repeat if necessary to get all of the wax out.",
+          "sol2": "Heat the measuring cup so that all the wax inside is liquid and rehardened. Then wipe out measuring cup with a paper towel. Repeat if necessary to get all of the wax out.",
+          "label": 0
+        },
+        "target": 0,
+        "arguments": [
+          [
+            "Question: how to clean a container that held melted wax\nAnswer:",
+            " Heat the measuring cup so that all the wax inside is liquid. Then wipe out measuring cup with a paper towel. Repeat if necessary to get all of the wax out."
+          ],
+          [
+            "Question: how to clean a container that held melted wax\nAnswer:",
+            " Heat the measuring cup so that all the wax inside is liquid and rehardened. Then wipe out measuring cup with a paper towel. Repeat if necessary to get all of the wax out."
+          ]
+        ],
+        "resps": [
+          [
+            [
+              -102.47819519042969,
+              false
+            ]
+          ],
+          [
+            [
+              -122.26924896240234,
+              false
+            ]
+          ]
+        ],
+        "filtered_resps": [
+          [
+            -102.47819519042969,
+            false
+          ],
+          [
+            -122.26924896240234,
+            false
+          ]
+        ],
+        "filter": "none",
+        "metrics": [
+          "acc",
+          "acc_norm"
+        ],
+        "doc_hash": "78b202d4a0716e5235d16f37c0b5246c974259a867fc360ec18eca3b59cd1300",
+        "prompt_hash": "576fc4bee6a246c99abf24f1e06eed134b4f9e723542d6095e3093dac3baf8e3",
+        "target_hash": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+        "acc": 1.0,
+        "acc_norm": 1.0
+      },
+      {
+        "doc_id": 66,
+        "doc": {
+          "goal": "How to light a candle with a deep seated wick?",
+          "sol1": "invert the candle upside down and pull the wick until the lighter can reach it",
+          "sol2": "invert the candle upside down and use the lighter to reach into the wick to light it",
+          "label": 1
+        },
+        "target": 1,
+        "arguments": [
+          [
+            "Question: How to light a candle with a deep seated wick?\nAnswer:",
+            " invert the candle upside down and pull the wick until the lighter can reach it"
+          ],
+          [
+            "Question: How to light a candle with a deep seated wick?\nAnswer:",
+            " invert the candle upside down and use the lighter to reach into the wick to light it"
+          ]
+        ],
+        "resps": [
+          [
+            [
+              -57.48543930053711,
+              false
+            ]
+          ],
+          [
+            [
+              -55.12623596191406,
+              false
+            ]
+          ]
+        ],
+        "filtered_resps": [
+          [
+            -57.48543930053711,
+            false
+          ],
+          [
+            -55.12623596191406,
+            false
+          ]
+        ],
+        "filter": "none",
+        "metrics": [
+          "acc",
+          "acc_norm"
+        ],
+        "doc_hash": "bbbf116e4f7d88a7e266e49d42ff332e57c5c1fb73522b0bf37e005b8b04188c",
+        "prompt_hash": "8d07813b2b49d2f4adc76b631cb3daf9eae8591ffad9a16cf983618eb69d0d2b",
+        "target_hash": "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b",
+        "acc": 1.0,
+        "acc_norm": 1.0
+      },
+      {
+        "doc_id": 67,
+        "doc": {
+          "goal": "To shape duct tape into a perfect circle.",
+          "sol1": "Use a gasket punch and a hammer.",
+          "sol2": "Use a nail and a hammer.",
+          "label": 0
+        },
+        "target": 0,
+        "arguments": [
+          [
+            "Question: To shape duct tape into a perfect circle.\nAnswer:",
+            " Use a gasket punch and a hammer."
+          ],
+          [
+            "Question: To shape duct tape into a perfect circle.\nAnswer:",
+            " Use a nail and a hammer."
+          ]
+        ],
+        "resps": [
+          [
+            [
+              -38.484535217285156,
+              false
+            ]
+          ],
+          [
+            [
+              -26.669641494750977,
+              false
+            ]
+          ]
+        ],
+        "filtered_resps": [
+          [
+            -38.484535217285156,
+            false
+          ],
+          [
+            -26.669641494750977,
+            false
+          ]
+        ],
+        "filter": "none",
+        "metrics": [
+          "acc",
+          "acc_norm"
+        ],
+        "doc_hash": "c68c572e133950226f6091e46af72eebf096b0637ffe72e62d943f74b530f57a",
+        "prompt_hash": "f26eaf9518df18d81ec147c4cb73c298e7efcdf2fbe8d66041e6d337f92ca3d6",
+        "target_hash": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+        "acc": 0.0,
+        "acc_norm": 0.0
+      },
+      {
+        "doc_id": 68,
+        "doc": {
+          "goal": "What can you do when someone presses all the buttons on the elevator then gets off and you are in a hurry?",
+          "sol1": "You can avoid stopping at all the floors by pressing the ones you want to skip twice, it will avoid the stop there.",
+          "sol2": "You can avoid passing all the floors by pressing the ones you want to skip twice, it will avoid the passing of the elevator there.",
+          "label": 0
+        },
+        "target": 0,
+        "arguments": [
+          [
+            "Question: What can you do when someone presses all the buttons on the elevator then gets off and you are in a hurry?\nAnswer:",
+            " You can avoid stopping at all the floors by pressing the ones you want to skip twice, it will avoid the stop there."
+          ],
+          [
+            "Question: What can you do when someone presses all the buttons on the elevator then gets off and you are in a hurry?\nAnswer:",
+            " You can avoid passing all the floors by pressing the ones you want to skip twice, it will avoid the passing of the elevator there."
+          ]
+        ],
+        "resps": [
+          [
+            [
+              -92.61547088623047,
+              false
+            ]
+          ],
+          [
+            [
+              -95.21099853515625,
+              false
+            ]
+          ]
+        ],
+        "filtered_resps": [
+          [
+            -92.61547088623047,
+            false
+          ],
+          [
+            -95.21099853515625,
+            false
+          ]
+        ],
+        "filter": "none",
+        "metrics": [
+          "acc",
+          "acc_norm"
+        ],
+        "doc_hash": "758bb26b981acebb3352f80ebaf7fc120821149090f31db438d791a45fe69054",
+        "prompt_hash": "78471473a7eeb2950114b65887046a2444a1597e3f2a5fc30d4a99e3a1593fb7",
+        "target_hash": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+        "acc": 1.0,
+        "acc_norm": 0.0
+      },
+      {
+        "doc_id": 69,
+        "doc": {
+          "goal": "What materials are needed to hand sew an article of clothing?",
+          "sol1": "Thread, needle, scissors, material and ruler",
+          "sol2": "Thread, needle, knife, material and ruler",
+          "label": 0
+        },
+        "target": 0,
+        "arguments": [
+          [
+            "Question: What materials are needed to hand sew an article of clothing?\nAnswer:",
+            " Thread, needle, scissors, material and ruler"
+          ],
+          [
+            "Question: What materials are needed to hand sew an article of clothing?\nAnswer:",
+            " Thread, needle, knife, material and ruler"
+          ]
+        ],
+        "resps": [
+          [
+            [
+              -40.39410400390625,
+              false
+            ]
+          ],
+          [
+            [
+              -39.8362922668457,
+              false
+            ]
+          ]
+        ],
+        "filtered_resps": [
+          [
+            -40.39410400390625,
+            false
+          ],
+          [
+            -39.8362922668457,
+            false
+          ]
+        ],
+        "filter": "none",
+        "metrics": [
+          "acc",
+          "acc_norm"
+        ],
+        "doc_hash": "4f023539c59040220be67dca68b72020ac92f2ca2d55fca2c2ce2a5f8da7e8ee",
+        "prompt_hash": "941cc8cca8db0343e687c57b56382b49255257cafcad788cc82802f1fb9b513d",
+        "target_hash": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+        "acc": 0.0,
+        "acc_norm": 1.0
+      },
+      {
+        "doc_id": 70,
+        "doc": {
+          "goal": "To make a hard shelled taco,",
+          "sol1": "put seasoned beef, cheese, and lettuce onto the hard shell.",
+          "sol2": "put seasoned beef, cheese, and lettuce into the hard shell.",
+          "label": 1
+        },
+        "target": 1,
+        "arguments": [
+          [
+            "Question: To make a hard shelled taco,\nAnswer:",
+            " put seasoned beef, cheese, and lettuce onto the hard shell."
+          ],
+          [
+            "Question: To make a hard shelled taco,\nAnswer:",
+            " put seasoned beef, cheese, and lettuce into the hard shell."
+          ]
+        ],
+        "resps": [
+          [
+            [
+              -49.79615020751953,
+              false
+            ]
+          ],
+          [
+            [
+              -48.403411865234375,
+              false
+            ]
+          ]
+        ],
+        "filtered_resps": [
+          [
+            -49.79615020751953,
+            false
+          ],
+          [
+            -48.403411865234375,
+            false
+          ]
+        ],
+        "filter": "none",
+        "metrics": [
+          "acc",
+          "acc_norm"
+        ],
+        "doc_hash": "9bd6027d600eebf411d0422e5ffa14c82f85b20d2027b4104ab9d2e6ecebfac6",
+        "prompt_hash": "b32f030fe6c937ccad36041aa85c9e5ee76cbaf4670ed0bdc3e8a4cb87ebfa85",
+        "target_hash": "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b",
+        "acc": 1.0,
+        "acc_norm": 1.0
+      },
+      {
+        "doc_id": 71,
+        "doc": {
+          "goal": "One wants to eat Vegetarian.",
+          "sol1": "One could have Eggs Benedict.",
+          "sol2": "One could have Eggs Florentine.",
+          "label": 1
+        },
+        "target": 1,
+        "arguments": [
+          [
+            "Question: One wants to eat Vegetarian.\nAnswer:",
+            " One could have Eggs Benedict."
+          ],
+          [
+            "Question: One wants to eat Vegetarian.\nAnswer:",
+            " One could have Eggs Florentine."
+          ]
+        ],
+        "resps": [
+          [
+            [
+              -33.40934753417969,
+              false
+            ]
+          ],
+          [
+            [
+              -37.528831481933594,
+              false
+            ]
+          ]
+        ],
+        "filtered_resps": [
+          [
+            -33.40934753417969,
+            false
+          ],
+          [
+            -37.528831481933594,
+            false
+          ]
+        ],
+        "filter": "none",
+        "metrics": [
+          "acc",
+          "acc_norm"
+        ],
+        "doc_hash": "072b711751c175cbe1bd4bb9df791a69aed4d9be49f14e9c8320b950bf312887",
+        "prompt_hash": "3980455dde214fd507c58188985ac6899d7a012b6bcc00f9a071f7ac77fdaa1a",
+        "target_hash": "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b",
+        "acc": 0.0,
+        "acc_norm": 0.0
+      },
+      {
+        "doc_id": 72,
+        "doc": {
+          "goal": "How do I find something I lost on the carpet?",
+          "sol1": "Put a solid seal on the end of your vacuum and turn it on.",
+          "sol2": "Put a hair net on the end of your vacuum and turn it on.",
+          "label": 1
+        },
+        "target": 1,
+        "arguments": [
+          [
+            "Question: How do I find something I lost on the carpet?\nAnswer:",
+            " Put a solid seal on the end of your vacuum and turn it on."
+          ],
+          [
+            "Question: How do I find something I lost on the carpet?\nAnswer:",
+            " Put a hair net on the end of your vacuum and turn it on."
+          ]
+        ],
+        "resps": [
+          [
+            [
+              -49.60316848754883,
+              false
+            ]
+          ],
+          [
+            [
+              -51.19414138793945,
+              false
+            ]
+          ]
+        ],
+        "filtered_resps": [
+          [
+            -49.60316848754883,
+            false
+          ],
+          [
+            -51.19414138793945,
+            false
+          ]
+        ],
+        "filter": "none",
+        "metrics": [
+          "acc",
+          "acc_norm"
+        ],
+        "doc_hash": "b4cfa8fef9d72bdc9a1e6d72c3ed9ec7212a351223b191dc0e368417a9b5ecc4",
+        "prompt_hash": "2b5acced6d50c20529fc92db49b0861dde2b4cd60363778cff942ecca97da441",
+        "target_hash": "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b",
+        "acc": 0.0,
+        "acc_norm": 0.0
+      },
+      {
+        "doc_id": 73,
+        "doc": {
+          "goal": "To make small candles to float in water,",
+          "sol1": "rub a blue candle on a grater over an ice cube tray and fill the tray with melted candle wax, then stick a wick in each cube wrapped around a pencil, after solid pull them out.",
+          "sol2": "rub a blue candle on a grater over an ice cube tray and fill the tray with cold pressed olive oil, then stick a wick in each cube wrapped around a pencil, after solid pull them out.",
+          "label": 0
+        },
+        "target": 0,
+        "arguments": [
+          [
+            "Question: To make small candles to float in water,\nAnswer:",
+            " rub a blue candle on a grater over an ice cube tray and fill the tray with melted candle wax, then stick a wick in each cube wrapped around a pencil, after solid pull them out."
+          ],
+          [
+            "Question: To make small candles to float in water,\nAnswer:",
+            " rub a blue candle on a grater over an ice cube tray and fill the tray with cold pressed olive oil, then stick a wick in each cube wrapped around a pencil, after solid pull them out."
+          ]
+        ],
+        "resps": [
+          [
+            [
+              -175.26759338378906,
+              false
+            ]
+          ],
+          [
+            [
+              -187.2729034423828,
+              false
+            ]
+          ]
+        ],
+        "filtered_resps": [
+          [
+            -175.26759338378906,
+            false
+          ],
+          [
+            -187.2729034423828,
+            false
+          ]
+        ],
+        "filter": "none",
+        "metrics": [
+          "acc",
+          "acc_norm"
+        ],
+        "doc_hash": "5e00a2d316a6e7c2051d4ee95b521a433d0ceb396871db324d32fd117dd247e7",
+        "prompt_hash": "4fcaad026ed6287df4b1d3d2fbb98d31930f2ca840e60bb8bd0ef8be4ba2e65c",
+        "target_hash": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+        "acc": 1.0,
+        "acc_norm": 1.0
+      },
+      {
+        "doc_id": 74,
+        "doc": {
+          "goal": "To clean your microwave without having to scrub it.",
+          "sol1": "Fill a bowl with water and microwave it for two to three minutes. The steam will loosen any dried food particles for easy cleaning.",
+          "sol2": "Fill a bowl with water and microwave it for two to three seconds. The steam will loosen any dried food particles for easy cleaning.",
+          "label": 0
+        },
+        "target": 0,
+        "arguments": [
+          [
+            "Question: To clean your microwave without having to scrub it.\nAnswer:",
+            " Fill a bowl with water and microwave it for two to three minutes. The steam will loosen any dried food particles for easy cleaning."
+          ],
+          [
+            "Question: To clean your microwave without having to scrub it.\nAnswer:",
+            " Fill a bowl with water and microwave it for two to three seconds. The steam will loosen any dried food particles for easy cleaning."
+          ]
+        ],
+        "resps": [
+          [
+            [
+              -83.1620864868164,
+              false
+            ]
+          ],
+          [
+            [
+              -85.69522094726562,
+              false
+            ]
+          ]
+        ],
+        "filtered_resps": [
+          [
+            -83.1620864868164,
+            false
+          ],
+          [
+            -85.69522094726562,
+            false
+          ]
+        ],
+        "filter": "none",
+        "metrics": [
+          "acc",
+          "acc_norm"
+        ],
+        "doc_hash": "0a6e0724b0c17035256890c7c5f79d8528d30caa7086eaa1fccc8145501f07e8",
+        "prompt_hash": "e60e06b27b14cbd65d209acab0e746f3e9ffa801387580ce9209e05508cdadf8",
+        "target_hash": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+        "acc": 1.0,
+        "acc_norm": 1.0
+      },
+      {
+        "doc_id": 75,
+        "doc": {
+          "goal": "To bend a PVC conduit,",
+          "sol1": "Use a heat source on the conduit. A flamethrower is recommended. Point the flamethrower  toward the spot you wand the conduit to bend and turn it on. Bend with your hands gently. Be sure to wear gloves doing so or you might be burned.",
+          "sol2": "Use a heat source on the conduit. A heat gun is recommended. Point the heat gun toward the spot you wand the conduit to bend and turn it on. Bend with your hands gently. Be sure to wear gloves doing so or you might be burned.",
+          "label": 1
+        },
+        "target": 1,
+        "arguments": [
+          [
+            "Question: To bend a PVC conduit,\nAnswer:",
+            " Use a heat source on the conduit. A flamethrower is recommended. Point the flamethrower  toward the spot you wand the conduit to bend and turn it on. Bend with your hands gently. Be sure to wear gloves doing so or you might be burned."
+          ],
+          [
+            "Question: To bend a PVC conduit,\nAnswer:",
+            " Use a heat source on the conduit. A heat gun is recommended. Point the heat gun toward the spot you wand the conduit to bend and turn it on. Bend with your hands gently. Be sure to wear gloves doing so or you might be burned."
+          ]
+        ],
+        "resps": [
+          [
+            [
+              -211.863525390625,
+              false
+            ]
+          ],
+          [
+            [
+              -193.13796997070312,
+              false
+            ]
+          ]
+        ],
+        "filtered_resps": [
+          [
+            -211.863525390625,
+            false
+          ],
+          [
+            -193.13796997070312,
+            false
+          ]
+        ],
+        "filter": "none",
+        "metrics": [
+          "acc",
+          "acc_norm"
+        ],
+        "doc_hash": "f5475294aa10fcb58d40322769977f50e5678ea41cb055f0b6273219100a24bd",
+        "prompt_hash": "f6656b34952fae769661cde626fcec70f909c2cc3a29b5bed80f7b3edb3d1ab6",
+        "target_hash": "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b",
+        "acc": 1.0,
+        "acc_norm": 1.0
+      },
+      {
+        "doc_id": 76,
+        "doc": {
+          "goal": "Make a camping shower head.",
+          "sol1": "Attach a watering can to a large jug.",
+          "sol2": "Attach a watering can to a small jug.",
+          "label": 0
+        },
+        "target": 0,
+        "arguments": [
+          [
+            "Question: Make a camping shower head.\nAnswer:",
+            " Attach a watering can to a large jug."
+          ],
+          [
+            "Question: Make a camping shower head.\nAnswer:",
+            " Attach a watering can to a small jug."
+          ]
+        ],
+        "resps": [
+          [
+            [
+              -40.835208892822266,
+              false
+            ]
+          ],
+          [
+            [
+              -41.739784240722656,
+              false
+            ]
+          ]
+        ],
+        "filtered_resps": [
+          [
+            -40.835208892822266,
+            false
+          ],
+          [
+            -41.739784240722656,
+            false
+          ]
+        ],
+        "filter": "none",
+        "metrics": [
+          "acc",
+          "acc_norm"
+        ],
+        "doc_hash": "00625709beff9a0869c3c0c941edfb7214f0253e12134b2d32d2369dd94e2f08",
+        "prompt_hash": "e84491787a03099a955c499c857468525d59c985f31e3594b110123b872a9df0",
+        "target_hash": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+        "acc": 1.0,
+        "acc_norm": 1.0
+      },
+      {
+        "doc_id": 77,
+        "doc": {
+          "goal": "Make Halloween lanterns.",
+          "sol1": "Draw ghost faces on full milk bottles, put a candle in each one.",
+          "sol2": "Draw ghost faces on empty milk bottles, put a candle in each one.",
+          "label": 1
+        },
+        "target": 1,
+        "arguments": [
+          [
+            "Question: Make Halloween lanterns.\nAnswer:",
+            " Draw ghost faces on full milk bottles, put a candle in each one."
+          ],
+          [
+            "Question: Make Halloween lanterns.\nAnswer:",
+            " Draw ghost faces on empty milk bottles, put a candle in each one."
+          ]
+        ],
+        "resps": [
+          [
+            [
+              -73.71332550048828,
+              false
+            ]
+          ],
+          [
+            [
+              -67.77410888671875,
+              false
+            ]
+          ]
+        ],
+        "filtered_resps": [
+          [
+            -73.71332550048828,
+            false
+          ],
+          [
+            -67.77410888671875,
+            false
+          ]
+        ],
+        "filter": "none",
+        "metrics": [
+          "acc",
+          "acc_norm"
+        ],
+        "doc_hash": "87d46d7de8bdc0c2a2c8c529dd09e88f89fb4c79b7909ab4396aa3360fceec97",
+        "prompt_hash": "d94e1d300ac93c7d287cfb147bbae593e0b54ac5e7403acee82cf4361f775243",
+        "target_hash": "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b",
+        "acc": 1.0,
+        "acc_norm": 1.0
+      },
+      {
+        "doc_id": 78,
+        "doc": {
+          "goal": "change a lightbulb in a ceiling fan",
+          "sol1": "Turn the switch off for the fan and light.Carefully reach up and take hold of the bulb that is blown. If it is hot because it has been on recently, use a cloth to protect your hands. Unscrew the bulb and carefully screw in a new bulb until it breaks in your hand",
+          "sol2": "Turn the switch off for the fan and light.Carefully reach up and take hold of the bulb that is blown. If it is hot because it has been on recently, use a cloth to protect your hands. Unscrew the bulb and carefully screw in a new bulb until it is tight.",
+          "label": 1
+        },
+        "target": 1,
+        "arguments": [
+          [
+            "Question: change a lightbulb in a ceiling fan\nAnswer:",
+            " Turn the switch off for the fan and light.Carefully reach up and take hold of the bulb that is blown. If it is hot because it has been on recently, use a cloth to protect your hands. Unscrew the bulb and carefully screw in a new bulb until it breaks in your hand"
+          ],
+          [
+            "Question: change a lightbulb in a ceiling fan\nAnswer:",
+            " Turn the switch off for the fan and light.Carefully reach up and take hold of the bulb that is blown. If it is hot because it has been on recently, use a cloth to protect your hands. Unscrew the bulb and carefully screw in a new bulb until it is tight."
+          ]
+        ],
+        "resps": [
+          [
+            [
+              -214.65036010742188,
+              false
+            ]
+          ],
+          [
+            [
+              -206.50978088378906,
+              false
+            ]
+          ]
+        ],
+        "filtered_resps": [
+          [
+            -214.65036010742188,
+            false
+          ],
+          [
+            -206.50978088378906,
+            false
+          ]
+        ],
+        "filter": "none",
+        "metrics": [
+          "acc",
+          "acc_norm"
+        ],
+        "doc_hash": "ac1770e8dcc5c1f779a41ce24b14a54b1fa5ca5e5f65c83487201ad24d9046bf",
+        "prompt_hash": "c973e7e77372c51065fee30421ceeccf0dbddcf54ca172ff932823987ce782e8",
+        "target_hash": "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b",
+        "acc": 1.0,
+        "acc_norm": 0.0
+      },
+      {
+        "doc_id": 79,
+        "doc": {
+          "goal": "Which direction to properly install an air filter.",
+          "sol1": "Air filters can be installed in any direction.",
+          "sol2": "Pay attention to the arrow markers. These indicate which way to insert the filter into the slot.",
+          "label": 1
+        },
+        "target": 1,
+        "arguments": [
+          [
+            "Question: Which direction to properly install an air filter.\nAnswer:",
+            " Air filters can be installed in any direction."
+          ],
+          [
+            "Question: Which direction to properly install an air filter.\nAnswer:",
+            " Pay attention to the arrow markers. These indicate which way to insert the filter into the slot."
+          ]
+        ],
+        "resps": [
+          [
+            [
+              -19.410648345947266,
+              false
+            ]
+          ],
+          [
+            [
+              -67.35699462890625,
+              false
+            ]
+          ]
+        ],
+        "filtered_resps": [
+          [
+            -19.410648345947266,
+            false
+          ],
+          [
+            -67.35699462890625,
+            false
+          ]
+        ],
+        "filter": "none",
+        "metrics": [
+          "acc",
+          "acc_norm"
+        ],
+        "doc_hash": "e2c5790ad483ba59540bc7d73a1ed43e4168f13ff02422ff7f03f0cb3c0274ba",
+        "prompt_hash": "d82edbd19cc8a4241e43ea155204ef94a47d096e6c5429c5e62e88c446d18b78",
+        "target_hash": "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b",
+        "acc": 0.0,
+        "acc_norm": 0.0
+      },
+      {
+        "doc_id": 80,
+        "doc": {
+          "goal": "Protect a bare shiny piece of metal, like a hinge, from rusting.",
+          "sol1": "Use a silver spray paint to seal your fixture, or they will continue to rust and tarnish with time.",
+          "sol2": "Use a clear enamel spray to seal your fixture, or they will continue to rust and tarnish with time.",
+          "label": 1
+        },
+        "target": 1,
+        "arguments": [
+          [
+            "Question: Protect a bare shiny piece of metal, like a hinge, from rusting.\nAnswer:",
+            " Use a silver spray paint to seal your fixture, or they will continue to rust and tarnish with time."
+          ],
+          [
+            "Question: Protect a bare shiny piece of metal, like a hinge, from rusting.\nAnswer:",
+            " Use a clear enamel spray to seal your fixture, or they will continue to rust and tarnish with time."
+          ]
+        ],
+        "resps": [
+          [
+            [
+              -82.36563110351562,
+              false
+            ]
+          ],
+          [
+            [
+              -83.3047866821289,
+              false
+            ]
+          ]
+        ],
+        "filtered_resps": [
+          [
+            -82.36563110351562,
+            false
+          ],
+          [
+            -83.3047866821289,
+            false
+          ]
+        ],
+        "filter": "none",
+        "metrics": [
+          "acc",
+          "acc_norm"
+        ],
+        "doc_hash": "2189ec21b0743c43d902194c3f9f46c276ecadebc612f621b91beae8d69b1f65",
+        "prompt_hash": "4477cd8596e9036bb8ff7f5775c8c203843211d4cfbc6249e14906c388646f46",
+        "target_hash": "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b",
+        "acc": 0.0,
+        "acc_norm": 0.0
+      },
+      {
+        "doc_id": 81,
+        "doc": {
+          "goal": "making a picture Frame on Your Wrist",
+          "sol1": "Gather your tools and materials, cut out  a watch by taking off the side plate, Cut Foamcore to Fit, Glue on Your Design and Wear Your Watch.",
+          "sol2": "Gather your tools and materials, gut a watch by taking off the back plate, Cut Foamcore to Fit, Glue on Your Design and Wear Your Watch.",
+          "label": 1
+        },
+        "target": 1,
+        "arguments": [
+          [
+            "Question: making a picture Frame on Your Wrist\nAnswer:",
+            " Gather your tools and materials, cut out  a watch by taking off the side plate, Cut Foamcore to Fit, Glue on Your Design and Wear Your Watch."
+          ],
+          [
+            "Question: making a picture Frame on Your Wrist\nAnswer:",
+            " Gather your tools and materials, gut a watch by taking off the back plate, Cut Foamcore to Fit, Glue on Your Design and Wear Your Watch."
+          ]
+        ],
+        "resps": [
+          [
+            [
+              -180.2804412841797,
+              false
+            ]
+          ],
+          [
+            [
+              -175.91384887695312,
+              false
+            ]
+          ]
+        ],
+        "filtered_resps": [
+          [
+            -180.2804412841797,
+            false
+          ],
+          [
+            -175.91384887695312,
+            false
+          ]
+        ],
+        "filter": "none",
+        "metrics": [
+          "acc",
+          "acc_norm"
+        ],
+        "doc_hash": "0721238953223c3ef6e7465e1c5d1d516c067f24f48a86f287a86b69a5e6808a",
+        "prompt_hash": "eb2937fcd549dafb4ffcda884efc45911957b1176100d428b9ec4e3b365ba2d8",
+        "target_hash": "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b",
+        "acc": 1.0,
+        "acc_norm": 0.0
+      },
+      {
+        "doc_id": 82,
+        "doc": {
+          "goal": "How do you bake a cheesecake properly?",
+          "sol1": "Create a water bath by placing a 12 inch wide cake pan on the middle rack of the oven and bake for one hour in a 350 degree blender.",
+          "sol2": "Create a water bath by placing a 12 inch wide cake pan on the middle rack of the oven and bake for one hour in a 350 degree oven.",
+          "label": 1
+        },
+        "target": 1,
+        "arguments": [
+          [
+            "Question: How do you bake a cheesecake properly?\nAnswer:",
+            " Create a water bath by placing a 12 inch wide cake pan on the middle rack of the oven and bake for one hour in a 350 degree blender."
+          ],
+          [
+            "Question: How do you bake a cheesecake properly?\nAnswer:",
+            " Create a water bath by placing a 12 inch wide cake pan on the middle rack of the oven and bake for one hour in a 350 degree oven."
+          ]
+        ],
+        "resps": [
+          [
+            [
+              -92.20940399169922,
+              false
+            ]
+          ],
+          [
+            [
+              -78.8371353149414,
+              false
+            ]
+          ]
+        ],
+        "filtered_resps": [
+          [
+            -92.20940399169922,
+            false
+          ],
+          [
+            -78.8371353149414,
+            false
+          ]
+        ],
+        "filter": "none",
+        "metrics": [
+          "acc",
+          "acc_norm"
+        ],
+        "doc_hash": "1dbba2733aca1e69334dd619ee660f0d3d721988d07e1cf87f725ceb0eab271f",
+        "prompt_hash": "48541de1d07238d7b0e16c09fedffa6006123a91a5df55067a11f304e5aca9c6",
+        "target_hash": "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b",
+        "acc": 1.0,
+        "acc_norm": 1.0
+      },
+      {
+        "doc_id": 83,
+        "doc": {
+          "goal": "Easy way to hang your shoes in your closet.",
+          "sol1": "Get a piece of wood and attach it about 1 foot from the floor of your closet. Add coat hooks at even intervals and hang your shoes.",
+          "sol2": "Get some coat hooks and attach it about 1 foot from the floor of your closet. Add coat hooks at even intervals and hang your shoes.",
+          "label": 0
+        },
+        "target": 0,
+        "arguments": [
+          [
+            "Question: Easy way to hang your shoes in your closet.\nAnswer:",
+            " Get a piece of wood and attach it about 1 foot from the floor of your closet. Add coat hooks at even intervals and hang your shoes."
+          ],
+          [
+            "Question: Easy way to hang your shoes in your closet.\nAnswer:",
+            " Get some coat hooks and attach it about 1 foot from the floor of your closet. Add coat hooks at even intervals and hang your shoes."
+          ]
+        ],
+        "resps": [
+          [
+            [
+              -92.80532836914062,
+              false
+            ]
+          ],
+          [
+            [
+              -98.61279296875,
+              false
+            ]
+          ]
+        ],
+        "filtered_resps": [
+          [
+            -92.80532836914062,
+            false
+          ],
+          [
+            -98.61279296875,
+            false
+          ]
+        ],
+        "filter": "none",
+        "metrics": [
+          "acc",
+          "acc_norm"
+        ],
+        "doc_hash": "74027faf10cbc31d843fe4c22d35a016958d42c62d7b5d12e810dca006303835",
+        "prompt_hash": "36c82410a05ea67ac816723cb1226314480299df0ae79e5fb1e3f66de6110c45",
+        "target_hash": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+        "acc": 1.0,
+        "acc_norm": 1.0
+      },
+      {
+        "doc_id": 84,
+        "doc": {
+          "goal": "Get cheap pizza.",
+          "sol1": "Call pizza place and ask for a discount on abandoned pizzas.",
+          "sol2": "Call pizza place and ask for a discount on incomplete cooked pizzas.",
+          "label": 0
+        },
+        "target": 0,
+        "arguments": [
+          [
+            "Question: Get cheap pizza.\nAnswer:",
+            " Call pizza place and ask for a discount on abandoned pizzas."
+          ],
+          [
+            "Question: Get cheap pizza.\nAnswer:",
+            " Call pizza place and ask for a discount on incomplete cooked pizzas."
+          ]
+        ],
+        "resps": [
+          [
+            [
+              -53.724082946777344,
+              false
+            ]
+          ],
+          [
+            [
+              -60.86613845825195,
+              false
+            ]
+          ]
+        ],
+        "filtered_resps": [
+          [
+            -53.724082946777344,
+            false
+          ],
+          [
+            -60.86613845825195,
+            false
+          ]
+        ],
+        "filter": "none",
+        "metrics": [
+          "acc",
+          "acc_norm"
+        ],
+        "doc_hash": "15e0ddd8c876d9845016d9049c7607f97e5fe3f99b95ad00065759263486369d",
+        "prompt_hash": "9a34455b556ffadb31b2195b516424533fa1f3d37c49c456e3c7b5bb0f7e78cf",
+        "target_hash": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+        "acc": 1.0,
+        "acc_norm": 0.0
+      },
+      {
+        "doc_id": 85,
+        "doc": {
+          "goal": "How do you harvest honey from a bee box?",
+          "sol1": "Smoke the bees. Once they are calm, remove the frames that are completely filled with honey from the hive. Use a sharp knife to cut off the wax that caps each comb. Once the combs are all opened, you can use an extractor to drain the honey out of the comb. You can also place the frame over a bucket and let the honey drain into the bucket over a few days time.",
+          "sol2": "Smoke the bees. Once they are calm, remove the frames that are completely filled with honey from the hive. Use a sharp knife to cut off the comb from each frame. Once the combs are all opened, you can use an extractor to drain the honey out of the comb. You can also place the frame over a bucket and let the honey drain into the bucket over a few days time.",
+          "label": 0
+        },
+        "target": 0,
+        "arguments": [
+          [
+            "Question: How do you harvest honey from a bee box?\nAnswer:",
+            " Smoke the bees. Once they are calm, remove the frames that are completely filled with honey from the hive. Use a sharp knife to cut off the wax that caps each comb. Once the combs are all opened, you can use an extractor to drain the honey out of the comb. You can also place the frame over a bucket and let the honey drain into the bucket over a few days time."
+          ],
+          [
+            "Question: How do you harvest honey from a bee box?\nAnswer:",
+            " Smoke the bees. Once they are calm, remove the frames that are completely filled with honey from the hive. Use a sharp knife to cut off the comb from each frame. Once the combs are all opened, you can use an extractor to drain the honey out of the comb. You can also place the frame over a bucket and let the honey drain into the bucket over a few days time."
+          ]
+        ],
+        "resps": [
+          [
+            [
+              -244.20928955078125,
+              false
+            ]
+          ],
+          [
+            [
+              -232.00057983398438,
+              false
+            ]
+          ]
+        ],
+        "filtered_resps": [
+          [
+            -244.20928955078125,
+            false
+          ],
+          [
+            -232.00057983398438,
+            false
+          ]
+        ],
+        "filter": "none",
+        "metrics": [
+          "acc",
+          "acc_norm"
+        ],
+        "doc_hash": "018213cd26f5e558c80607eb63671333c6bac560744a4db5079048ce44bb8ef3",
+        "prompt_hash": "bc10ae4bb0a98a1e752b55594df7658dad303b275fec542d6d3d903922fc3f77",
+        "target_hash": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+        "acc": 0.0,
+        "acc_norm": 0.0
+      },
+      {
+        "doc_id": 86,
+        "doc": {
+          "goal": "What supplies are needed to make a  small decorative Christmas tree?",
+          "sol1": "Styrofoam cone        Mini plastic spoons        Mixed beads        One ornament star        Scissors        Hot water gun        Gold spray paint",
+          "sol2": "Styrofoam cone        Mini plastic spoons        Mixed beads        One ornament star        Scissors        Hot glue gun        Gold spray paint",
+          "label": 1
+        },
+        "target": 1,
+        "arguments": [
+          [
+            "Question: What supplies are needed to make a  small decorative Christmas tree?\nAnswer:",
+            " Styrofoam cone        Mini plastic spoons        Mixed beads        One ornament star        Scissors        Hot water gun        Gold spray paint"
+          ],
+          [
+            "Question: What supplies are needed to make a  small decorative Christmas tree?\nAnswer:",
+            " Styrofoam cone        Mini plastic spoons        Mixed beads        One ornament star        Scissors        Hot glue gun        Gold spray paint"
+          ]
+        ],
+        "resps": [
+          [
+            [
+              -157.6015167236328,
+              false
+            ]
+          ],
+          [
+            [
+              -149.456787109375,
+              false
+            ]
+          ]
+        ],
+        "filtered_resps": [
+          [
+            -157.6015167236328,
+            false
+          ],
+          [
+            -149.456787109375,
+            false
+          ]
+        ],
+        "filter": "none",
+        "metrics": [
+          "acc",
+          "acc_norm"
+        ],
+        "doc_hash": "b596be3ea06ac43ac4127e6b9bea63366ddc323f150db360eebbefaea4f0d742",
+        "prompt_hash": "44f4652ceca134dedd35e2a48bc7adc700b5ab36dca4eac6c7401f1e51dfebc2",
+        "target_hash": "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b",
+        "acc": 1.0,
+        "acc_norm": 1.0
+      },
+      {
+        "doc_id": 87,
+        "doc": {
+          "goal": "How to create Dorodango (Japanese mud-art).",
+          "sol1": "Gather dirt, wet it to make mud, and roll it into the shape of a ball, keep adding water so it will remain mud-like, add water whenever it begins to dry.",
+          "sol2": "Gather dirt, wet it to make mud, and roll it into the shape of a ball, let it sit until it dries, then buff it with a cloth.",
+          "label": 1
+        },
+        "target": 1,
+        "arguments": [
+          [
+            "Question: How to create Dorodango (Japanese mud-art).\nAnswer:",
+            " Gather dirt, wet it to make mud, and roll it into the shape of a ball, keep adding water so it will remain mud-like, add water whenever it begins to dry."
+          ],
+          [
+            "Question: How to create Dorodango (Japanese mud-art).\nAnswer:",
+            " Gather dirt, wet it to make mud, and roll it into the shape of a ball, let it sit until it dries, then buff it with a cloth."
+          ]
+        ],
+        "resps": [
+          [
+            [
+              -133.6452178955078,
+              false
+            ]
+          ],
+          [
+            [
+              -107.85475158691406,
+              false
+            ]
+          ]
+        ],
+        "filtered_resps": [
+          [
+            -133.6452178955078,
+            false
+          ],
+          [
+            -107.85475158691406,
+            false
+          ]
+        ],
+        "filter": "none",
+        "metrics": [
+          "acc",
+          "acc_norm"
+        ],
+        "doc_hash": "e32836678a651a9186d41609ed26e47db727eabea9f4bfce7aa9d02ae3bc9ea8",
+        "prompt_hash": "29423336c206a4fd4eadd092a6aec2bfe4d9228da12f95b2a699b7a11980ead2",
+        "target_hash": "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b",
+        "acc": 1.0,
+        "acc_norm": 1.0
+      },
+      {
+        "doc_id": 88,
+        "doc": {
+          "goal": "How to sleep in proper posture?",
+          "sol1": "Sleep straight with a pillow over your head.",
+          "sol2": "Sleep straight with a pillow under your head.",
+          "label": 1
+        },
+        "target": 1,
+        "arguments": [
+          [
+            "Question: How to sleep in proper posture?\nAnswer:",
+            " Sleep straight with a pillow over your head."
+          ],
+          [
+            "Question: How to sleep in proper posture?\nAnswer:",
+            " Sleep straight with a pillow under your head."
+          ]
+        ],
+        "resps": [
+          [
+            [
+              -26.9462833404541,
+              false
+            ]
+          ],
+          [
+            [
+              -26.46622657775879,
+              false
+            ]
+          ]
+        ],
+        "filtered_resps": [
+          [
+            -26.9462833404541,
+            false
+          ],
+          [
+            -26.46622657775879,
+            false
+          ]
+        ],
+        "filter": "none",
+        "metrics": [
+          "acc",
+          "acc_norm"
+        ],
+        "doc_hash": "8626db59c59779e8c541ba9196ea3471267cf437485eebae83a3c832ab9890f9",
+        "prompt_hash": "8b689fa3f67b51852e9e1380c66d3d6e7ec387bc5f2aa04ffd132653e7ee99d8",
+        "target_hash": "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b",
+        "acc": 1.0,
+        "acc_norm": 1.0
+      },
+      {
+        "doc_id": 89,
+        "doc": {
+          "goal": "To extend the shelf life of lettuce,",
+          "sol1": "wrap it in paper towels before storing it in a bag.",
+          "sol2": "wrap it in foil wrap instead of storing it in a bag.",
+          "label": 0
+        },
+        "target": 0,
+        "arguments": [
+          [
+            "Question: To extend the shelf life of lettuce,\nAnswer:",
+            " wrap it in paper towels before storing it in a bag."
+          ],
+          [
+            "Question: To extend the shelf life of lettuce,\nAnswer:",
+            " wrap it in foil wrap instead of storing it in a bag."
+          ]
+        ],
+        "resps": [
+          [
+            [
+              -33.438804626464844,
+              false
+            ]
+          ],
+          [
+            [
+              -43.35968780517578,
+              false
+            ]
+          ]
+        ],
+        "filtered_resps": [
+          [
+            -33.438804626464844,
+            false
+          ],
+          [
+            -43.35968780517578,
+            false
+          ]
+        ],
+        "filter": "none",
+        "metrics": [
+          "acc",
+          "acc_norm"
+        ],
+        "doc_hash": "fdabc2aa556c4918ad67d86464ef7ceab21f89eb66242c2b008219d71eccbedd",
+        "prompt_hash": "8983e2b2369cdac1b92f5f9cce0176f613893c5fb220f1594442d198f7c06798",
+        "target_hash": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+        "acc": 1.0,
+        "acc_norm": 1.0
+      },
+      {
+        "doc_id": 90,
+        "doc": {
+          "goal": "To dye the white fondant to make the fondant roses",
+          "sol1": "Dip the fondant in the food coloring and then rub in  the food coloring  then knead until the color is evenly distributed",
+          "sol2": "Dip a toothpick in the food coloring and then rub the food coloring onto the white fondant, then knead until the color is evenly distributed",
+          "label": 1
+        },
+        "target": 1,
+        "arguments": [
+          [
+            "Question: To dye the white fondant to make the fondant roses\nAnswer:",
+            " Dip the fondant in the food coloring and then rub in  the food coloring  then knead until the color is evenly distributed"
+          ],
+          [
+            "Question: To dye the white fondant to make the fondant roses\nAnswer:",
+            " Dip a toothpick in the food coloring and then rub the food coloring onto the white fondant, then knead until the color is evenly distributed"
+          ]
+        ],
+        "resps": [
+          [
+            [
+              -90.38919067382812,
+              false
+            ]
+          ],
+          [
+            [
+              -82.37156677246094,
+              false
+            ]
+          ]
+        ],
+        "filtered_resps": [
+          [
+            -90.38919067382812,
+            false
+          ],
+          [
+            -82.37156677246094,
+            false
+          ]
+        ],
+        "filter": "none",
+        "metrics": [
+          "acc",
+          "acc_norm"
+        ],
+        "doc_hash": "6d6b504ebc816e0b9c587293b72bc7c48d4048397542d20de9da7b7645f97e62",
+        "prompt_hash": "9ecdbd31bb77f4b7c474a91f7ba28a72c03714351d0fef3f1b9992bf8a4aaeea",
+        "target_hash": "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b",
+        "acc": 1.0,
+        "acc_norm": 1.0
+      },
+      {
+        "doc_id": 91,
+        "doc": {
+          "goal": "To make seed starter pots",
+          "sol1": "use balled toilet paper  with some soil and a seed",
+          "sol2": "use a toilet paper roll with some soil and a seed",
+          "label": 1
+        },
+        "target": 1,
+        "arguments": [
+          [
+            "Question: To make seed starter pots\nAnswer:",
+            " use balled toilet paper  with some soil and a seed"
+          ],
+          [
+            "Question: To make seed starter pots\nAnswer:",
+            " use a toilet paper roll with some soil and a seed"
+          ]
+        ],
+        "resps": [
+          [
+            [
+              -66.87802124023438,
+              false
+            ]
+          ],
+          [
+            [
+              -48.45585632324219,
+              false
+            ]
+          ]
+        ],
+        "filtered_resps": [
+          [
+            -66.87802124023438,
+            false
+          ],
+          [
+            -48.45585632324219,
+            false
+          ]
+        ],
+        "filter": "none",
+        "metrics": [
+          "acc",
+          "acc_norm"
+        ],
+        "doc_hash": "49ea8122cee20f6c07ab2db48e2c5f1ff343366ca9eff2e3f1b2abab167199e3",
+        "prompt_hash": "ad0b5d5fb09ea3d9ae0f278986c63942ede0f37b438f13f515f6ae5b2a87cd11",
+        "target_hash": "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b",
+        "acc": 1.0,
+        "acc_norm": 1.0
+      },
+      {
+        "doc_id": 92,
+        "doc": {
+          "goal": "To prepare a loaf pan for Blueberry Lemon Financiers.",
+          "sol1": "Grease and flour a six-cavity mini loaf pan or a standard 12-cavity muffin pan.",
+          "sol2": "Grease and sugar a six-cavity mini loaf pan or a standard 12-cavity muffin pan.",
+          "label": 0
+        },
+        "target": 0,
+        "arguments": [
+          [
+            "Question: To prepare a loaf pan for Blueberry Lemon Financiers.\nAnswer:",
+            " Grease and flour a six-cavity mini loaf pan or a standard 12-cavity muffin pan."
+          ],
+          [
+            "Question: To prepare a loaf pan for Blueberry Lemon Financiers.\nAnswer:",
+            " Grease and sugar a six-cavity mini loaf pan or a standard 12-cavity muffin pan."
+          ]
+        ],
+        "resps": [
+          [
+            [
+              -70.6928482055664,
+              false
+            ]
+          ],
+          [
+            [
+              -78.0000228881836,
+              false
+            ]
+          ]
+        ],
+        "filtered_resps": [
+          [
+            -70.6928482055664,
+            false
+          ],
+          [
+            -78.0000228881836,
+            false
+          ]
+        ],
+        "filter": "none",
+        "metrics": [
+          "acc",
+          "acc_norm"
+        ],
+        "doc_hash": "2a9feb9cfe1e3fbaeea19223586d2a30bf40d4b73953ab220a746d03a41fbd6b",
+        "prompt_hash": "5f3e8b318df0579226174ebd3c8e5c54c07aec4a5bbbd714cbae9b2bec859144",
+        "target_hash": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+        "acc": 1.0,
+        "acc_norm": 1.0
+      },
+      {
+        "doc_id": 93,
+        "doc": {
+          "goal": "How can I raise and lower a picavet with a camera attached so it can be flown with a kite?",
+          "sol1": "You would implement a pulley system with wheels and strong string.",
+          "sol2": "You would implement a pulley system with carabiners and strong string.",
+          "label": 1
+        },
+        "target": 1,
+        "arguments": [
+          [
+            "Question: How can I raise and lower a picavet with a camera attached so it can be flown with a kite?\nAnswer:",
+            " You would implement a pulley system with wheels and strong string."
+          ],
+          [
+            "Question: How can I raise and lower a picavet with a camera attached so it can be flown with a kite?\nAnswer:",
+            " You would implement a pulley system with carabiners and strong string."
+          ]
+        ],
+        "resps": [
+          [
+            [
+              -61.46700668334961,
+              false
+            ]
+          ],
+          [
+            [
+              -69.88497161865234,
+              false
+            ]
+          ]
+        ],
+        "filtered_resps": [
+          [
+            -61.46700668334961,
+            false
+          ],
+          [
+            -69.88497161865234,
+            false
+          ]
+        ],
+        "filter": "none",
+        "metrics": [
+          "acc",
+          "acc_norm"
+        ],
+        "doc_hash": "79ea8fdc0b07e2e57ae9151c80bfb1c044104ef9a200e8f41521feaf887525f8",
+        "prompt_hash": "b73306b0c6c0a3c115c7799dc042093ea328862155536e2f8e6ffc60d56aa2bf",
+        "target_hash": "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b",
+        "acc": 0.0,
+        "acc_norm": 0.0
+      },
+      {
+        "doc_id": 94,
+        "doc": {
+          "goal": "Increase ability to learn something new.",
+          "sol1": "Diffuse vegetable oil.",
+          "sol2": "Diffuse cinnamon essential oil.",
+          "label": 1
+        },
+        "target": 1,
+        "arguments": [
+          [
+            "Question: Increase ability to learn something new.\nAnswer:",
+            " Diffuse vegetable oil."
+          ],
+          [
+            "Question: Increase ability to learn something new.\nAnswer:",
+            " Diffuse cinnamon essential oil."
+          ]
+        ],
+        "resps": [
+          [
+            [
+              -30.316741943359375,
+              false
+            ]
+          ],
+          [
+            [
+              -35.49958801269531,
+              false
+            ]
+          ]
+        ],
+        "filtered_resps": [
+          [
+            -30.316741943359375,
+            false
+          ],
+          [
+            -35.49958801269531,
+            false
+          ]
+        ],
+        "filter": "none",
+        "metrics": [
+          "acc",
+          "acc_norm"
+        ],
+        "doc_hash": "632de39249bfb5d46e975e131af1a68f7cc3672efbe28a5ee7c6b603c07f2465",
+        "prompt_hash": "bb90eb38127670edc4b513dfe78e02f18fbe7c382cf4eb8e455da399fa49224f",
+        "target_hash": "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b",
+        "acc": 0.0,
+        "acc_norm": 1.0
+      },
+      {
+        "doc_id": 95,
+        "doc": {
+          "goal": "When building a survival fishing kit, what can you use to make fishing hooks?",
+          "sol1": "Carefully bend a safety pin into a hook shape with pliers and fasten it to a thin paracord to create a makeshift fishing line.",
+          "sol2": "Carefully bend a paper clip into a hook shape with pliers and fasten it to a thin paracord to create a makeshift fishing line.",
+          "label": 0
+        },
+        "target": 0,
+        "arguments": [
+          [
+            "Question: When building a survival fishing kit, what can you use to make fishing hooks?\nAnswer:",
+            " Carefully bend a safety pin into a hook shape with pliers and fasten it to a thin paracord to create a makeshift fishing line."
+          ],
+          [
+            "Question: When building a survival fishing kit, what can you use to make fishing hooks?\nAnswer:",
+            " Carefully bend a paper clip into a hook shape with pliers and fasten it to a thin paracord to create a makeshift fishing line."
+          ]
+        ],
+        "resps": [
+          [
+            [
+              -109.88392639160156,
+              false
+            ]
+          ],
+          [
+            [
+              -112.2802963256836,
+              false
+            ]
+          ]
+        ],
+        "filtered_resps": [
+          [
+            -109.88392639160156,
+            false
+          ],
+          [
+            -112.2802963256836,
+            false
+          ]
+        ],
+        "filter": "none",
+        "metrics": [
+          "acc",
+          "acc_norm"
+        ],
+        "doc_hash": "d021f7ede46b5ab93c73bded81d4cf91ecfac61872cbff5be2832cd4bdd14624",
+        "prompt_hash": "d255be478f1ea6aae781e4d36f78af724a506d963b5a16c9df1b3a020a83b431",
+        "target_hash": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+        "acc": 1.0,
+        "acc_norm": 1.0
+      },
+      {
+        "doc_id": 96,
+        "doc": {
+          "goal": "How can I set my umbrella up on my deck more effectively?",
+          "sol1": "Mount several sets of galvanized plumbing pipe straps on the deck posts or railing in key places. Use straps with a much narrower diameter than the umbrella pole. Then just pick a spot and slip the umbrella pole through the straps until the bottom of the pole rests on the deck.",
+          "sol2": "Mount several sets of galvanized plumbing pipe straps on the deck posts or railing in key places. Use straps with a slightly wider diameter than the umbrella pole. Then just pick a spot and slip the umbrella pole through the straps until the bottom of the pole rests on the deck.",
+          "label": 1
+        },
+        "target": 1,
+        "arguments": [
+          [
+            "Question: How can I set my umbrella up on my deck more effectively?\nAnswer:",
+            " Mount several sets of galvanized plumbing pipe straps on the deck posts or railing in key places. Use straps with a much narrower diameter than the umbrella pole. Then just pick a spot and slip the umbrella pole through the straps until the bottom of the pole rests on the deck."
+          ],
+          [
+            "Question: How can I set my umbrella up on my deck more effectively?\nAnswer:",
+            " Mount several sets of galvanized plumbing pipe straps on the deck posts or railing in key places. Use straps with a slightly wider diameter than the umbrella pole. Then just pick a spot and slip the umbrella pole through the straps until the bottom of the pole rests on the deck."
+          ]
+        ],
+        "resps": [
+          [
+            [
+              -215.5200653076172,
+              false
+            ]
+          ],
+          [
+            [
+              -212.29371643066406,
+              false
+            ]
+          ]
+        ],
+        "filtered_resps": [
+          [
+            -215.5200653076172,
+            false
+          ],
+          [
+            -212.29371643066406,
+            false
+          ]
+        ],
+        "filter": "none",
+        "metrics": [
+          "acc",
+          "acc_norm"
+        ],
+        "doc_hash": "ec5158a3fde10673e38defaa22fa2ec808f370bad9bf1c6675902d2cc677c060",
+        "prompt_hash": "d6696d030b119131e0bfc295ee41dbe5ea41acf3e6c0ad81455b236dcbc3024b",
+        "target_hash": "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b",
+        "acc": 1.0,
+        "acc_norm": 1.0
+      },
+      {
+        "doc_id": 97,
+        "doc": {
+          "goal": "To remove sharpie pen from a couch,",
+          "sol1": "soak the area in soy milk so that the region is colored by it.",
+          "sol2": "soak the stained area in milk for an hour and then rub away.",
+          "label": 1
+        },
+        "target": 1,
+        "arguments": [
+          [
+            "Question: To remove sharpie pen from a couch,\nAnswer:",
+            " soak the area in soy milk so that the region is colored by it."
+          ],
+          [
+            "Question: To remove sharpie pen from a couch,\nAnswer:",
+            " soak the stained area in milk for an hour and then rub away."
+          ]
+        ],
+        "resps": [
+          [
+            [
+              -71.84078979492188,
+              false
+            ]
+          ],
+          [
+            [
+              -61.16333770751953,
+              false
+            ]
+          ]
+        ],
+        "filtered_resps": [
+          [
+            -71.84078979492188,
+            false
+          ],
+          [
+            -61.16333770751953,
+            false
+          ]
+        ],
+        "filter": "none",
+        "metrics": [
+          "acc",
+          "acc_norm"
+        ],
+        "doc_hash": "374f5ad2a5d8cbf3e684dd523e408578f6731805ba813fc5c844f216dab0c650",
+        "prompt_hash": "c871c94ec9c51fdb7accc0621a3ec8260c747e33bca358f599f62d908e98958e",
+        "target_hash": "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b",
+        "acc": 1.0,
+        "acc_norm": 1.0
+      },
+      {
+        "doc_id": 98,
+        "doc": {
+          "goal": "To remove folds and creases from a sewing pattern",
+          "sol1": "set a clothing iron on low and carefully iron the pattern to remove folds and creases before pinning to your fabric.",
+          "sol2": "set a clothing iron on high and carefully iron the pattern to remove folds and creases before pinning to your fabric.",
+          "label": 0
+        },
+        "target": 0,
+        "arguments": [
+          [
+            "Question: To remove folds and creases from a sewing pattern\nAnswer:",
+            " set a clothing iron on low and carefully iron the pattern to remove folds and creases before pinning to your fabric."
+          ],
+          [
+            "Question: To remove folds and creases from a sewing pattern\nAnswer:",
+            " set a clothing iron on high and carefully iron the pattern to remove folds and creases before pinning to your fabric."
+          ]
+        ],
+        "resps": [
+          [
+            [
+              -92.89035034179688,
+              false
+            ]
+          ],
+          [
+            [
+              -89.4546127319336,
+              false
+            ]
+          ]
+        ],
+        "filtered_resps": [
+          [
+            -92.89035034179688,
+            false
+          ],
+          [
+            -89.4546127319336,
+            false
+          ]
+        ],
+        "filter": "none",
+        "metrics": [
+          "acc",
+          "acc_norm"
+        ],
+        "doc_hash": "12f96355063158c824ddacae41a06fb5889cf03ec2ebd5d0dc26eff1923ad4d0",
+        "prompt_hash": "d8e009942779437ab7c315f39f97e1851656644651ea00a68c15052f407821f4",
+        "target_hash": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+        "acc": 0.0,
+        "acc_norm": 0.0
+      },
+      {
+        "doc_id": 99,
+        "doc": {
+          "goal": "how to get perfectly done grilled meat",
+          "sol1": "move closer to the coals the longer it has been on. when almost finished, move directly on top of the coals.",
+          "sol2": "Take your meat and fish off the grill a few seconds before it's perfectly done because it cooks an extra 5\u201310 degrees when resting",
+          "label": 1
+        },
+        "target": 1,
+        "arguments": [
+          [
+            "Question: how to get perfectly done grilled meat\nAnswer:",
+            " move closer to the coals the longer it has been on. when almost finished, move directly on top of the coals."
+          ],
+          [
+            "Question: how to get perfectly done grilled meat\nAnswer:",
+            " Take your meat and fish off the grill a few seconds before it's perfectly done because it cooks an extra 5\u201310 degrees when resting"
+          ]
+        ],
+        "resps": [
+          [
+            [
+              -98.68399810791016,
+              false
+            ]
+          ],
+          [
+            [
+              -106.53707885742188,
+              false
+            ]
+          ]
+        ],
+        "filtered_resps": [
+          [
+            -98.68399810791016,
+            false
+          ],
+          [
+            -106.53707885742188,
+            false
+          ]
+        ],
+        "filter": "none",
+        "metrics": [
+          "acc",
+          "acc_norm"
+        ],
+        "doc_hash": "6dafc332021b555afd6d9290a72bda97fcbcf08633fc332bc38e42d1d692f876",
+        "prompt_hash": "0e765c836e1fb7957727dda5a78cd0c8fbff06b9c7de8fdad1d021f3eef1958e",
+        "target_hash": "6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b",
+        "acc": 0.0,
+        "acc_norm": 1.0
+      }
+    ]
+  },
+  "config": {
+    "model": "EleutherAI/pythia-160m",
+    "model_args": "pretrained=gpt2",
+    "model_num_parameters": 162322944,
+    "model_dtype": "torch.float32",
+    "model_revision": "main",
+    "model_sha": "50f5173d932e8e61f858120bcb800b97af589f46",
+    "batch_size": null,
+    "batch_sizes": [],
+    "device": null,
+    "use_cache": null,
+    "limit": 100,
+    "bootstrap_iters": 100000,
+    "gen_kwargs": null,
+    "random_seed": 0,
+    "numpy_seed": 1234,
+    "torch_seed": 1234,
+    "fewshot_seed": 1234
+  },
+  "git_hash": "6b9569a",
+  "date": 1784891905.0923536,
+  "pretty_env_info": "PyTorch version: 2.13.0+cu130\nIs debug build: False\nCUDA used to build PyTorch: 13.0\nROCM used to build PyTorch: N/A\n\nOS: Ubuntu 26.04 LTS (x86_64)\nGCC version: (Ubuntu 15.2.0-16ubuntu1) 15.2.0\nClang version: Could not collect\nCMake version: Could not collect\nLibc version: glibc-2.43\n\nPython version: 3.14.4 (main, Jun 18 2026, 14:25:02) [GCC 15.2.0] (64-bit runtime)\nPython platform: Linux-7.0.0-27-generic-x86_64-with-glibc2.43\nIs CUDA available: False\nCUDA runtime version: No CUDA\nCUDA_MODULE_LOADING set to: N/A\nGPU models and configuration: No CUDA\nNvidia driver version: No CUDA\ncuDNN version: No CUDA\nIs XPU available: False\nHIP runtime version: N/A\nMIOpen runtime version: N/A\nIs XNNPACK available: False\nCaching allocator config: N/A\n\nCPU:\nArchitecture:                            x86_64\nCPU op-mode(s):                          32-bit, 64-bit\nAddress sizes:                           43 bits physical, 48 bits virtual\nByte Order:                              Little Endian\nCPU(s):                                  8\nOn-line CPU(s) list:                     0-7\nVendor ID:                               AuthenticAMD\nModel name:                              AMD Ryzen 5 3500U with Radeon Vega Mobile Gfx\nCPU family:                              23\nModel:                                   24\nThread(s) per core:                      2\nCore(s) per socket:                      4\nSocket(s):                               1\nStepping:                                1\nFrequency boost:                         enabled\nCPU(s) scaling MHz:                      134%\nCPU max MHz:                             2100.0000\nCPU min MHz:                             1400.0000\nBogoMIPS:                                4192.22\nFlags:                                   fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm constant_tsc rep_good nopl nonstop_tsc cpuid extd_apicid aperfmperf rapl pni pclmulqdq monitor ssse3 fma cx16 sse4_1 sse4_2 movbe popcnt aes xsave avx f16c rdrand lahf_lm cmp_legacy svm extapic cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw skinit wdt tce topoext perfctr_core perfctr_nb bpext perfctr_llc mwaitx cpb hw_pstate ssbd ibpb vmmcall fsgsbase bmi1 avx2 smep bmi2 rdseed adx smap clflushopt sha_ni xsaveopt xsavec xgetbv1 clzero xsaveerptr arat npt lbrv svm_lock nrip_save tsc_scale vmcb_clean flushbyasid decodeassists pausefilter pfthreshold avic v_vmsave_vmload vgif overflow_recov succor smca sev sev_es\nVirtualization:                          AMD-V\nL1d cache:                               128 KiB (4 instances)\nL1i cache:                               256 KiB (4 instances)\nL2 cache:                                2 MiB (4 instances)\nL3 cache:                                4 MiB (1 instance)\nNUMA node(s):                            1\nNUMA node0 CPU(s):                       0-7\nVulnerability Gather data sampling:      Not affected\nVulnerability Ghostwrite:                Not affected\nVulnerability Indirect target selection: Not affected\nVulnerability Itlb multihit:             Not affected\nVulnerability L1tf:                      Not affected\nVulnerability Mds:                       Not affected\nVulnerability Meltdown:                  Not affected\nVulnerability Mmio stale data:           Not affected\nVulnerability Old microcode:             Not affected\nVulnerability Reg file data sampling:    Not affected\nVulnerability Retbleed:                  Mitigation; untrained return thunk; SMT vulnerable\nVulnerability Spec rstack overflow:      Mitigation; Safe RET\nVulnerability Spec store bypass:         Mitigation; Speculative Store Bypass disabled via prctl\nVulnerability Spectre v1:                Mitigation; usercopy/swapgs barriers and __user pointer sanitization\nVulnerability Spectre v2:                Mitigation; Retpolines; IBPB conditional; STIBP disabled; RSB filling; PBRSB-eIBRS Not affected; BHI Not affected\nVulnerability Srbds:                     Not affected\nVulnerability Tsa:                       Not affected\nVulnerability Tsx async abort:           Not affected\nVulnerability Vmscape:                   Mitigation; IBPB before exit to userspace\n\nVersions of relevant libraries:\n[pip3] Could not collect\n[conda] Could not collect",
+  "transformers_version": "5.14.1",
+  "lm_eval_version": "0.4.12",
+  "upper_git_hash": "6b9569a5c066c0a50e1bc7c5faa45c34b4b0fe2a",
+  "tokenizer_pad_token": [
+    "<|padding|>",
+    "1"
+  ],
+  "tokenizer_eos_token": [
+    "<|endoftext|>",
+    "0"
+  ],
+  "tokenizer_bos_token": [
+    "<|endoftext|>",
+    "0"
+  ],
+  "eot_token_id": 0,
+  "max_length": 2048
+}

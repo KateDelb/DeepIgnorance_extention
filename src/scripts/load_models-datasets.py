@@ -40,7 +40,6 @@ def load_models():
 
     models = list(MODEL_REGISTRY) if args.all else args.models
     datasets = list(DATASETS) if args.all else args.datasets
-    print(args.datasets)
     if not models and not args.datasets:
         ap.error("Specify --models / --datasets / --all")
 

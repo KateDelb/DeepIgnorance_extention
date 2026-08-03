@@ -378,6 +378,7 @@ dependencies = [
     { name = "hflm" },
     { name = "lm-eval" },
     { name = "load-dotenv" },
+    { name = "nanogcg" },
     { name = "torch" },
     { name = "transformer-lens" },
     { name = "transformers" },
@@ -389,6 +390,7 @@ requires-dist = [
     { name = "hflm", specifier = ">=0.0.9" },
     { name = "lm-eval", specifier = ">=0.4.12" },
     { name = "load-dotenv", specifier = ">=0.1.0" },
+    { name = "nanogcg", specifier = ">=0.2.3" },
     { name = "torch", specifier = ">=2.13.0" },
     { name = "transformer-lens", specifier = ">=3.5.1" },
     { name = "transformers", specifier = ">=5.14.1" },
@@ -890,6 +892,19 @@ wheels = [
     { url = "https://files.pythonhosted.org/packages/7f/74/d2c27e03cb84251dfe7249b8e82923643c6d48fa4883b9476b025e7dc7eb/multiprocess-0.70.19-py313-none-any.whl", hash = "sha256:8d5eb4ec5017ba2fab4e34a747c6d2c2b6fecfe9e7236e77988db91580ada952", size = 156414, upload-time = "2026-01-19T06:47:35.915Z" },
     { url = "https://files.pythonhosted.org/packages/a0/61/af9115673a5870fd885247e2f1b68c4f1197737da315b520a91c757a861a/multiprocess-0.70.19-py314-none-any.whl", hash = "sha256:e8cc7fbdff15c0613f0a1f1f8744bef961b0a164c0ca29bdff53e9d2d93c5e5f", size = 160318, upload-time = "2026-01-19T06:47:37.497Z" },
     { url = "https://files.pythonhosted.org/packages/7e/82/69e539c4c2027f1e1697e09aaa2449243085a0edf81ae2c6341e84d769b6/multiprocess-0.70.19-py39-none-any.whl", hash = "sha256:0d4b4397ed669d371c81dcd1ef33fd384a44d6c3de1bd0ca7ac06d837720d3c5", size = 133477, upload-time = "2026-01-19T06:47:38.619Z" },
+]
+
+[[package]]
+name = "nanogcg"
+version = "0.2.3"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "torch" },
+    { name = "transformers" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/9f/f0/c68249b0d4b7c2d47d4507afb3d0f8bcee5a25dd3bd11f09c527126f9469/nanogcg-0.2.3.tar.gz", hash = "sha256:0f3fe79a152c4c97a0ef9ff3284eeba9255b48d50f1daa7446d8e2de5e8c71e4", size = 13467, upload-time = "2025-01-07T20:06:27.786Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/e3/5a/1319e4379a0bd3f937a8e48f3fa877160333af2a44de3e8c068fb68f84f9/nanogcg-0.2.3-py3-none-any.whl", hash = "sha256:e06d2ab42ec681b9a06b7540ccb4f2493c301e63871adae561bf551f0f0a3b43", size = 12124, upload-time = "2025-01-07T20:06:25.542Z" },
 ]
 
 [[package]]
