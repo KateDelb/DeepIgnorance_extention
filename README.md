@@ -1,6 +1,6 @@
 # How well does filtering forget?
 
-This is a replication of the Deep Ignorance paper (O'Brien, 2025) with an extension ...................
+This is a replication of the Deep Ignorance paper (O'Brien, 2025) with an mechinterp extension to see to what extend the information has been removed in the weights (simple linear probe).
 
 1. Loading
  Models and eval dataset loaded into cache for later use (loaded from /src/scripts/load into /src/cache)
