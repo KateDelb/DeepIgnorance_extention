@@ -1,0 +1,8 @@
+# @package _global_
+eval:
+  limit: null
+  paper_tasks: true
+  num_fewshot: 0
+probe:
+  limit: 256
+  all_layers: false

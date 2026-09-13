@@ -1,0 +1,5 @@
+ARG BASE_IMAGE=deep-ignorance-base:latest
+FROM ${BASE_IMAGE}
+
+ENTRYPOINT ["/app/docker/run_attack.sh"]
+CMD ["--model", "EleutherAI/pythia-160m", "--num-steps", "50"]

@@ -1,0 +1,16 @@
+.venv/
+.env
+.git/
+.gitignore
+**/__pycache__/
+**/*.py[oc]
+src/cache/
+src/results/
+.resolved_tasks/
+cache/
+*.egg-info/
+dist/
+build/
+wheels/
+.cursor/
+**/.DS_Store

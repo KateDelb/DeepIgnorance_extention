@@ -1,18 +1,24 @@
 [project]
 name = "deep-ignorance-extension"
 version = "0.1.0"
-description = "Add your description here"
+description = "Remake of Deep Ignorance (O'Brien et al., 2025) with a linear-probe extension"
 readme = "README.md"
 authors = [
     { name = "KateD", email = "katedelb@gmail.com" }
 ]
 requires-python = ">=3.14"
 dependencies = [
+    "datasets>=4.0.0",
     "dotenv>=0.9.9",
     "hflm>=0.0.9",
+    "hydra-core>=1.3.6",
     "lm-eval>=0.4.12",
     "load-dotenv>=0.1.0",
+    "matplotlib>=3.11.1",
     "nanogcg>=0.2.3",
+    "pandas>=2.2.0",
+    "peft>=0.20.0",
+    "scikit-learn>=1.5.0",
     "torch>=2.13.0",
     "transformer-lens>=3.5.1",
     "transformers>=5.14.1",

@@ -1,53 +1,90 @@
+"""General-capability evaluation (PIQA, HellaSwag, LAMBADA, MMLU, ...)."""
+
+from __future__ import annotations
+
+import argparse
+import datetime
+import os
+import sys
+from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+
 import lm_eval
 from lm_eval.models.huggingface import HFLM
 
-import json
-import datetime
-from dotenv import load_dotenv
-
-TASKS = [""]
-MODELS = {
-    # "small-test":       "EleutherAI/pythia-160m"
-    "unfiltered": "EleutherAI/deep-ignorance-unfiltered",
-    "strong-pt-weak-anneal": "EleutherAI/deep-ignorance-strong-filter-pt-weak-filter-anneal",
-    "e2e-strong-filter": "EleutherAI/deep-ignorance-e2e-strong-filter",
-}
+import config
 
 
-def eval_general_capability(model, tasks):
-    # Load cached model
-    lm = HFLM(pretrained=model, dtype="float32", device="cpu")
-
-    results = lm_eval.simple_evaluate(
+def eval_general_capability(model: str, tasks: list[str], limit: int | None = None) -> dict:
+    lm = HFLM(pretrained=model, dtype=config.DTYPE, device=config.DEVICE)
+    return lm_eval.simple_evaluate(
         model=lm,
-        model_args="pretrained=gpt2",
         tasks=tasks,
-        limit=100,
+        limit=limit,
+        log_samples=False,
+        bootstrap_iters=100,
     )
-    return results
 
 
-def json_default(obj):
-    """Fallback for objects json.dump can't serialize natively."""
-    try:
-        return str(obj)
-    except Exception:
-        return f"<non-serializable: {type(obj).__name__}>"
+def run_general_eval(
+    models: dict[str, str] | None = None,
+    tasks: list[str] | None = None,
+    limit: int | None = None,
+) -> None:
+    models = models or config.GENERAL_CAPABILITY_MODELS
+    tasks = tasks or config.DEFAULT_GENERAL_TASKS
+    limit = config.EVAL_LIMIT if limit is None else limit
+    out_dir = config.results_path()
+    tasks_string = "-".join(tasks)
+
+    for _name, model in models.items():
+        model_name = model.replace("/", "_")
+        timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
+        print(f"######################### TASK {tasks} on {model} #########################")
+        results = eval_general_capability(model, tasks, limit=limit)
+        config.write_json(out_dir / f"{model_name}_{tasks_string}_{timestamp}.json", results)
+
+
+def parse_args() -> argparse.Namespace:
+    parser = argparse.ArgumentParser(description="Evaluate general capabilities")
+    parser.add_argument("--model", help="Single HuggingFace model id or registry name")
+    parser.add_argument(
+        "--models",
+        help="Comma-separated registry names (default: paper filter comparison set)",
+    )
+    parser.add_argument(
+        "--tasks",
+        default=os.environ.get("TASKS", ",".join(config.DEFAULT_GENERAL_TASKS)),
+        help="Comma-separated lm-eval task names",
+    )
+    parser.add_argument(
+        "--limit",
+        type=int,
+        default=config.EVAL_LIMIT,
+        help="Per-task example cap. Set 0 for the full split.",
+    )
+    parser.add_argument(
+        "--paper-tasks",
+        action="store_true",
+        help="Use piqa, hellaswag, lambada_openai, and mmlu",
+    )
+    return parser.parse_args()
 
 
 if __name__ == "__main__":
-    load_dotenv()
+    args = parse_args()
+    config.require_hf_token()
+    config.log_runtime_info()
 
-    for model in MODELS:
-        model = MODELS[model]
-        model_name = model.replace("/", "_")
-        timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
-        tasks = ["piqa"]
-        tasks_string = "-".join(tasks)
+    if args.model:
+        model_id = config.resolve_model_id(args.model)
+        models = {args.model: model_id}
+    elif args.models:
+        models = {name: config.resolve_model_id(name.strip()) for name in args.models.split(",") if name.strip()}
+    else:
+        models = config.GENERAL_CAPABILITY_MODELS
 
-        print(
-            f"######################### TASK {tasks} on {model} #########################"
-        )
-        results_general_cap = eval_general_capability(model, tasks)
-        with open(f"results/{model_name}_{tasks_string}_{timestamp}.json", "w") as f:
-            json.dump(results_general_cap, f, indent=2, default=json_default)
+    tasks = config.PAPER_GENERAL_TASKS if args.paper_tasks else [t.strip() for t in args.tasks.split(",") if t.strip()]
+    limit = None if args.limit == 0 else args.limit
+    run_general_eval(models=models, tasks=tasks, limit=limit)

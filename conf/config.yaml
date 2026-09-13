@@ -1,0 +1,44 @@
+defaults:
+  - _self_
+  - experiment: smoke
+  - job: bio
+  - model: small_test
+
+# Shared eval knobs. Job/experiment groups override these.
+eval:
+  limit: 100
+  mcqa: auto
+  num_fewshot: 0
+  tasks:
+    - piqa
+  paper_tasks: false
+
+probe:
+  source: cloze
+  limit: 256
+  layer: -1
+  all_layers: false
+  batch_size: 4
+  seed: 0
+
+finetune:
+  attack_dataset: wikitext
+  method: lora
+  eval_every_n_steps: 50
+  eval_source: cloze
+  eval_limit: 64
+  max_steps: 20
+  batch_size: 16
+  context_window: 2048
+  learning_rate: 2.0e-5
+  epochs: 2
+  target_tokens: 305000000
+
+hydra:
+  job:
+    chdir: false
+  run:
+    dir: ${oc.env:RESULTS_DIR,results}/${now:%Y-%m-%d}/${now:%H-%M-%S}
+  sweep:
+    dir: ${oc.env:RESULTS_DIR,results}/multirun/${now:%Y-%m-%d}/${now:%H-%M-%S}
+    subdir: ${hydra.job.num}

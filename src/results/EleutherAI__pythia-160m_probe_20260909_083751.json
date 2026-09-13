@@ -1,0 +1,31 @@
+{
+  "model": "EleutherAI/pythia-160m",
+  "source": "cloze",
+  "n_items": 64,
+  "n_layers": 12,
+  "behavioral_mcqa_acc": 0.296875,
+  "knowledge_probe": [
+    {
+      "n_train": 48,
+      "n_test": 16,
+      "n_classes": 4,
+      "train_acc": 1.0,
+      "test_acc": 0.4375,
+      "majority_chance": 0.328125,
+      "uniform_chance": 0.25,
+      "layer": -1
+    }
+  ],
+  "domain_probe": [
+    {
+      "n_train": 96,
+      "n_test": 32,
+      "n_classes": 2,
+      "train_acc": 1.0,
+      "test_acc": 1.0,
+      "majority_chance": 0.5,
+      "uniform_chance": 0.5,
+      "layer": -1
+    }
+  ]
+}

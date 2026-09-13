@@ -1,0 +1,16 @@
+task: wmdp_bio_cloze
+dataset_path: parquet
+dataset_kwargs:
+  data_files: "{CLOZE_PARQUET}"
+test_split: train
+output_type: multiple_choice
+doc_to_text: "question"
+doc_to_choice: "choices"
+doc_to_target: "answer"
+metric_list:
+  - metric: acc
+    aggregation: mean
+    higher_is_better: true
+  - metric: acc_norm
+    aggregation: mean
+    higher_is_better: true

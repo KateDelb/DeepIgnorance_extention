@@ -1,0 +1,108 @@
+services:
+  app:
+    image: deep-ignorance-base:latest
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.base
+    env_file:
+      - .env
+    environment:
+      RUNNING_IN_DOCKER: "1"
+      HF_HOME: /workspace/cache
+      RESULTS_DIR: /workspace/results
+    volumes:
+      - ../cache:/workspace/cache
+      - ./src/results:/workspace/results
+      - ./src:/app/src
+      - ./conf:/app/conf
+    # gpus: all
+    working_dir: /app/src
+    stdin_open: true
+    tty: true
+    entrypoint: ["sleep", "infinity"]
+
+  prefetch:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.base
+    env_file:
+      - .env
+    environment:
+      RUNNING_IN_DOCKER: "1"
+      HF_HOME: /workspace/cache
+      RESULTS_DIR: /workspace/results
+    volumes:
+      - ../cache:/workspace/cache
+      - ./src/results:/workspace/results
+    entrypoint: ["/app/docker/prefetch.sh"]
+
+  eval:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.eval
+      args:
+        BASE_IMAGE: deep-ignorance-base:latest
+    env_file:
+      - .env
+    environment:
+      RUNNING_IN_DOCKER: "1"
+      HF_HOME: /workspace/cache
+      RESULTS_DIR: /workspace/results
+    volumes:
+      - ../cache:/workspace/cache
+      - ./src/results:/workspace/results
+    # gpus: all
+    command: ["--suite", "all", "--model", "EleutherAI/pythia-160m"]
+
+  probe:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.eval
+      args:
+        BASE_IMAGE: deep-ignorance-base:latest
+    env_file:
+      - .env
+    environment:
+      RUNNING_IN_DOCKER: "1"
+      HF_HOME: /workspace/cache
+      RESULTS_DIR: /workspace/results
+    volumes:
+      - ../cache:/workspace/cache
+      - ./src/results:/workspace/results
+    # gpus: all
+    command: ["--suite", "probe", "--model", "EleutherAI/pythia-160m"]
+
+  attack:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.attack
+      args:
+        BASE_IMAGE: deep-ignorance-base:latest
+    env_file:
+      - .env
+    environment:
+      RUNNING_IN_DOCKER: "1"
+      HF_HOME: /workspace/cache
+      RESULTS_DIR: /workspace/results
+    volumes:
+      - ../cache:/workspace/cache
+      - ./src/results:/workspace/results
+    # gpus: all
+    command: ["--model", "EleutherAI/pythia-160m", "--num-steps", "50"]
+
+  finetune:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.base
+    env_file:
+      - .env
+    environment:
+      RUNNING_IN_DOCKER: "1"
+      HF_HOME: /workspace/cache
+      RESULTS_DIR: /workspace/results
+    volumes:
+      - ../cache:/workspace/cache
+      - ./src/results:/workspace/results
+    # gpus: all
+    entrypoint: ["/app/docker/run_finetune.sh"]
+    command: ["--model", "EleutherAI/pythia-160m", "--attack-dataset", "wikitext", "--method", "lora", "--max-steps", "20"]

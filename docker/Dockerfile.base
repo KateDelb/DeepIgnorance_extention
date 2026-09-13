@@ -1,0 +1,23 @@
+FROM runpod/pytorch:1.0.2-cu1281-torch280-ubuntu2404
+
+COPY --from=ghcr.io/astral-sh/uv:latest /uv /usr/local/bin/uv
+
+ENV RUNNING_IN_DOCKER=1
+ENV HF_HOME=/workspace/cache
+ENV TRANSFORMERS_CACHE=/workspace/cache
+ENV RESULTS_DIR=/workspace/results
+ENV PATH="/app/.venv/bin:${PATH}"
+
+WORKDIR /app
+
+COPY pyproject.toml uv.lock ./
+RUN uv sync --frozen --no-dev --python 3.14
+
+COPY src/ ./src/
+COPY conf/ ./conf/
+COPY docker/*.sh ./docker/
+RUN chmod +x ./docker/*.sh
+
+WORKDIR /app/src
+
+RUN python -c "import torch; print('torch', torch.__version__)"

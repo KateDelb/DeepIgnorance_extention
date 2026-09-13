@@ -1,0 +1,12 @@
+# @package _global_
+eval:
+  limit: 100
+  paper_tasks: false
+  num_fewshot: 0
+probe:
+  limit: 64
+  all_layers: true
+finetune:
+  max_steps: 20
+  attack_dataset: wikitext
+  method: lora

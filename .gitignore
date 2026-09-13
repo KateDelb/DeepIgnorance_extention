@@ -12,3 +12,10 @@ wheels/
 
 # Cache excluded because of large filesize
 src/cache
+src/.resolved_tasks
+.resolved_tasks
+
+# Hydra default dirs if RESULTS_DIR is unset
+outputs/
+multirun/
+src/results/plots/

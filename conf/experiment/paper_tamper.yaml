@@ -1,0 +1,11 @@
+# @package _global_
+finetune:
+  attack_dataset: wmdp_bio_forget
+  method: lora
+  batch_size: 16
+  context_window: 2048
+  learning_rate: 2.0e-5
+  epochs: 2
+  max_steps: null
+  target_tokens: 305000000
+  eval_every_n_steps: 500
